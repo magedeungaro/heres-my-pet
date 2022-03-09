@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_195919) do
+ActiveRecord::Schema.define(version: 2022_03_09_202810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2022_03_09_195919) do
     t.date "birthdate"
     t.string "pet_type"
     t.string "additional_info"
-    t.boolean "spayed"
-    t.boolean "lost"
+    t.boolean "spayed", default: false
+    t.boolean "lost", default: false
     t.uuid "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2022_03_09_195919) do
     t.string "address"
     t.string "phone"
     t.string "nickname"
-    t.boolean "onboarded"
-    t.boolean "share_info"
+    t.boolean "onboarded", default: false
+    t.boolean "share_info", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
