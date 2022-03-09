@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: 1.5
+  lng: 1.5
+  message: MyText
+  user_consent: false
+  pet: one
+
+two:
+  lat: 1.5
+  lng: 1.5
+  message: MyText
+  user_consent: false
+  pet: two
