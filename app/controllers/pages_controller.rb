@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :landing
+  skip_before_action :authenticate_user!, only: [:landing, :ui_kitt]
 
   def landing
   end
