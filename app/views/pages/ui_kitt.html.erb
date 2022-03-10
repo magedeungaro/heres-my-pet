@@ -16,7 +16,7 @@
   <hr>
 
   <%# buttons %>
-  <div class="container w-80">
+  <div class="container w-80 py-5">
 
     <h2>Buttons</h2>
     <p  class="pt-3">Primary</p>
@@ -38,7 +38,23 @@
     <a href="" class="btn btn-tertiary btn-link">
       Link with some text
     </a>
+
+    <h2>Cards</h2>
+
+    <p class="pt-3">
+      pet card
+    </p>
+
+    <% pet_image = 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' %>
+    <div class="pet--card" style="<%= background_image url: pet_image %>">
+      <div class="pet--card__content text-white">
+        <i class="far fa-paw"></i>
+        Some pet here
+      </div>
+    </div>
+
   </div>
+
 
   <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
     <span><strong>!</strong> This UI kitt is to be viewed on small mobile viewports.</span>

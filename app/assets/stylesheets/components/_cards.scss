@@ -1,0 +1,10 @@
+.pet--card {
+  @include background-cover-center;
+  @include d-flex-align(end);
+  height: 150px;
+  border-radius: 25px;
+
+  &__content {
+
+  }
+}
