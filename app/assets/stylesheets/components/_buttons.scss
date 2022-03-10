@@ -1,0 +1,18 @@
+.btn-tertiary {
+  color: $hmp-gray;
+  border-color: transparent;
+
+  &:hover {
+    border-color: $hmp-gray;
+  }
+}
+
+.btn-link {
+  font-weight: lighter;
+  text-decoration: underline;
+
+  &:hover {
+    border-color: transparent;
+    font-weight: bold;
+  }
+}

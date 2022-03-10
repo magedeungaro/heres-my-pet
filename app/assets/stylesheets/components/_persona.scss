@@ -1,0 +1,14 @@
+.persona--template {
+  &__image {
+    @include background-top-contain-fixed;
+    height: 45vh;
+  }
+
+  &__content {
+    $persona-radius: 25px;
+    border-top-left-radius: $persona-radius;
+    border-top-right-radius: $persona-radius;
+    margin-top: -5vh;
+    background-color: $body-bg
+  }
+}

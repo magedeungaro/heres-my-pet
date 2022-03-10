@@ -1,6 +1,6 @@
 module ImageHelper
   def background_image(args = {})
-    url = 'https://img.freepik.com/free-vector/pet-veterinary_24908-57965.jpg?size=338&ext=jpg&ga=GA1.2.867202971.1638403200'
+    url = asset_path('persona_photo.png')
 
     url = args[:url] unless args[:url].nil?
 
