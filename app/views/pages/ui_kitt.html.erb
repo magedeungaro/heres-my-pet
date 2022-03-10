@@ -1,11 +1,19 @@
 <main>
-  <%# begin of persona template %>
+  <%# begin of persona template => WHOLE PAGE %>
   <div class="persona--template">
-    <div class="persona--template__image"
-          style="<%= background_image %>"></div>
+    <div class="persona--template__image" style="<%= background_image %>"></div>
+
+    <div class="persona--template__content py-5">
+      <div class="container w-80">
+          <h2>Persona template</h2>
+      </div>
+    </div>
   </div>
 
   <%# end of persona template %>
+
+
+  <hr>
 
   <%# buttons %>
   <div class="container w-80">
@@ -29,6 +37,13 @@
     <p>Links</p>
     <a href="" class="btn btn-tertiary btn-link">
       Link with some text
+    </a>
+  </div>
+
+  <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
+    <span><strong>!</strong> This UI kitt is to be viewed on small mobile viewports.</span>
+    <a data-bs-dismiss="alert" aria-label="Close">
+      <i class="far fa-window-close"></i>
     </a>
   </div>
 </main>
