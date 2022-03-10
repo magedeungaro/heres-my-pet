@@ -2,9 +2,9 @@
   @include background-cover-center;
   @include d-flex-align(end);
   height: 150px;
-  border-radius: 25px;
+  border-radius: 10px;
 
   &__content {
-
+    color: $white-opacity-90;
   }
 }
