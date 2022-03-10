@@ -17,7 +17,7 @@
                 autofocus: true,
                 input_html: { autocomplete: "Last Name" }%>
     <%= f.input :birthdate,
-                required: true,
+                required: true, as: :date, html5: true,
                 autofocus: true,
                 input_html: { autocomplete: "dd/mm/yyyy" }%>
     <%= f.input :nickname,
