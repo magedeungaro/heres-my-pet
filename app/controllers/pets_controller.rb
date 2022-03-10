@@ -26,7 +26,7 @@ class PetsController < ApplicationController
   def update
     authorize @pet
     if @pet.update(pet_params)
-      redirect_to user_path(@pet.user)
+      redirect_to pet_path(@pet)
     else
       render :edit
     end
