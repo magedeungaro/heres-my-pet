@@ -1,0 +1,15 @@
+@mixin background-top-contain-fixed {
+  background-position: top;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+@mixin background-cover-center {
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin d-flex-align($position) {
+  display: flex;
+  align-items: $position;
+}
