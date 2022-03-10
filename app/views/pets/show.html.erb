@@ -1,5 +1,5 @@
 <main>
-  <div class="container w-80">
+  <div class="persona--template">
     <div class="row">
       <div class="col-12">
         <p><%= @pet.pet_type %></p>
@@ -12,10 +12,10 @@
         <p><%= @pet.lost %></p>
         <div class="p-2 bg-dark bg-opacity-25">
           <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
-            <i class="fas fa-edit"></i>
+            <p>Edit</p><i class="fas fa-edit"></i>
           <% end %>
           <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
-            <i class="fas fa-trash-alt"></i>
+            <p>delete</p><i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
       </div>
