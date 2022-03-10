@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show, :edit, :delete]
+  before_action :set_pet, only: [:show, :edit, :destroy, :update]
 
   def show
     authorize @pet
@@ -23,6 +23,10 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @pet
+  end
+
   def update
     authorize @pet
     if @pet.update(pet_params)
@@ -34,7 +38,7 @@ class PetsController < ApplicationController
 
   def destroy
     @pet.destroy
-    redirect_to user_path(@pet.user)
+    redirect_to user_path(current_user)
     authorize @pet
   end
 

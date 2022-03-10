@@ -10,6 +10,15 @@
         <p><%= @pet.spayed %></p>
         <p><%= @pet.additional_info %></p>
         <p><%= @pet.lost %></p>
+        <div class="p-2 bg-dark bg-opacity-25">
+          <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
       </div>
     </div>
   </div>
