@@ -12,6 +12,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+const images = require.context('../images', true)
+
 window.addEventListener('load', () => {
   navigator.serviceWorker.register('/service-worker.js').then(registration => {
     console.log('ServiceWorker registered: ', registration);
