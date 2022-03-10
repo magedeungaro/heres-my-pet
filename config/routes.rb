@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'pages#landing'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'pages#landing'
+
   get 'onboarding', to: 'pages#onboarding'
+  get 'ui-kitt', to: 'pages#ui_kitt'
+
+  devise_for :users
 
   resources :users, only: :show
 
