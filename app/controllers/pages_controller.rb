@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def onboarding
   end
+
+  def ui_kitt
+  end
 end
