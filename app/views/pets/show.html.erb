@@ -1,9 +1,9 @@
 <main>
-  <div class="container w-80">
+  <div class="persona--template">
     <div class="row">
       <div class="col-12">
         <p><%= @pet.pet_type %></p>
-        <p><%= @pet.photo.key %></p>
+        <p><%= cl_image_tag @pet.photo.key %></p>
         <p><%= @pet.name %></p>
         <p><%= @pet.gender %></p>
         <p><%= @pet.birthdate %></p>
