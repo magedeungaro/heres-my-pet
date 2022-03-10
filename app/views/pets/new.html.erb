@@ -3,22 +3,22 @@
     <h2 class="fw-bold pb-5">Add a new pet</h2>
       <div class="row">
         <div class="col-12">
-            <%= simple_form_for [@user, @pet] do |f| %>
-              <%= f.input :pet_type %>
-              <%= f.input :name %>
-              <%= f.input :sex %>
-              <%= f.input :birthdate %>
-              <%= f.input :spayed %>
-              <%= f.input :additional_info %>
-              <%= f.input :special_treatment %>
-              <%= f.input :lost %>
+          <%= simple_form_for [@user, @pet] do |f| %>
+            <%= f.input :pet_type %>
+            <%= f.input :photo, as: :file %>
+            <%= f.input :name %>
+            <%= f.input :sex %>
+            <%= f.input :birthdate %>
+            <%= f.input :spayed %>
+            <%= f.input :additional_info %>
+            <%= f.input :special_treatment %>
+            <%= f.input :lost %>
 
-              <div class="py-3">
-                <%= f.button :submit, class: "btn btn-outline-primary"%>
-              </div>
-            <% end %>
+            <div class="py-3">
+              <%= f.button :submit, class: "btn btn-outline-primary"%>
+            </div>
+          <% end %>
         </div>
       </div>
-    </div>
   </div>
 </main>
