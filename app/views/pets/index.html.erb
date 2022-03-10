@@ -1,0 +1,20 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 scrollable-col">
+        <% @pets.each do |pet| %>
+            <div class = 'airbnb-card row p-4'>
+              <div class="col-4">
+                <div class="container w-80 image rounded-3" style="<%= pet.photo.attached? ? background_image(url: pet.photo.key, cloudinary: true) : background_image(cloudinary: false) %>">
+                  <p class="card-text text-black-50"><%= link_to pet.name %></p>
+                  <p class="fs-3">
+                    <%= link_to pet.name, pet_path(pet)%>
+                  </p>
+                </div>
+              </div>
+            </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
+</main>
