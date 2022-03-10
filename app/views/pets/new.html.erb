@@ -1,0 +1,23 @@
+<main>
+  <div class="container w-80">
+    <h2 class="fw-bold pb-5">Add a new pet</h2>
+      <div class="row">
+        <div class="col-12">
+          <%= simple_form_for [@pet] do |f| %>
+            <%= f.input :pet_type %>
+            <%= f.input :photo, as: :file %>
+            <%= f.input :name %>
+            <%= f.input :gender %>
+            <%= f.input :birthdate %>
+            <%= f.input :spayed %>
+            <%= f.input :additional_info %>
+            <%= f.input :lost %>
+
+            <div class="py-3">
+              <%= f.button :submit, class: "btn btn-outline-primary"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</main>

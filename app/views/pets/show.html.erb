@@ -1,0 +1,16 @@
+<main>
+  <div class="container w-80">
+    <div class="row">
+      <div class="col-12">
+        <p><%= @pet.pet_type %></p>
+        <p><%= cl_image_tag @pet.photo.key %></p>
+        <p><%= @pet.name %></p>
+        <p><%= @pet.gender %></p>
+        <p><%= @pet.birthdate %></p>
+        <p><%= @pet.spayed %></p>
+        <p><%= @pet.additional_info %></p>
+        <p><%= @pet.lost %></p>
+      </div>
+    </div>
+  </div>
+</main>
