@@ -23,6 +23,21 @@ class PetsController < ApplicationController
     end
   end
 
+  def update
+    authorize @pet
+    if @pet.update(pet_params)
+      redirect_to user_path(@pet.user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to user_path(@pet.user)
+    authorize @pet
+  end
+
   private
 
   def set_pet
