@@ -1,10 +1,9 @@
 <div class="persona--template">
-  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>"></div>
+  <div class="persona--template__image" style="<%= @user.photo.attached? ? background_image(cloudinary: true, url: @user.photo.key): background_image %>"></div>
 
   <div class="persona--template__content py-5">
     <div class="container w-80">
       <p><%= @user.first_name %> <%= @user.last_name %></p>
-        <p><%= cl_image_tag @user.photo.key %></p>
         <p><%= @user.email %></p>
         <p><%= @user.address %></p>
         <p><%= @user.phone %></p>
