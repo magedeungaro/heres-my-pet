@@ -2,6 +2,7 @@
   &__image {
     @include background-top-contain-fixed;
     height: 45vh;
+    background-repeat: no-repeat;
   }
 
   &__content {
