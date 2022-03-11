@@ -15,6 +15,7 @@
 
             <div class="py-3">
               <%= f.button :submit, class: "btn btn-outline-primary"%>
+              <%= link_to "Back", pets_path(current_user), class: "btn btn-outline-primary" %>
             </div>
           <% end %>
         </div>
