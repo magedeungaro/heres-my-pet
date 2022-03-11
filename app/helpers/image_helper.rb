@@ -7,7 +7,7 @@ module ImageHelper
     url = cl_image_path url if args[:cloudinary]
 
     color_one = 'rgba(0, 0, 0, 0)'
-    color_two = 'rgba(0, 0, 0, .1)'
+    color_two = 'rgba(0, 0, 0, .4)'
 
     "background-image: linear-gradient(#{color_one}, #{color_two}), url(#{url})"
   end
