@@ -1,23 +1,27 @@
 <main>
   <div class="container">
     <div class="row">
-      <div class="col-8 scrollable-col">
+      <div class="col-12 scrollable-col">
         <% @pets.each do |pet| %>
-            <div class = 'airbnb-card row p-4'>
-              <div class="col-4">
-                <div class="container w-80 image rounded-3" style="<%= pet.photo.attached? ? background_image(url: pet.photo.key, cloudinary: true) : background_image(cloudinary: false) %>">
-                  <p class="card-text text-black-50"><%= link_to pet.name %></p>
-                  <p class="fs-3">
-                    <%= link_to pet.name, pet_path(pet)%>
+            <div class = "row p-4">
+            <%= link_to pet_path(pet), style:"text-decoration:none;" do %>
+              <div class="col-12">
+                <div class="pet--card" style="<%= pet.photo.attached? ? background_image(url: pet.photo.key, cloudinary: true) : background_image(cloudinary: false) %>">
+                  <p class="pet--card__content mx-2">
+                    <%= pet.name %>
                   </p>
                 </div>
               </div>
+              <% end %>
             </div>
         <% end %>
+        <div class = "row p-4">
+          <div class="col-12">
+            <%= link_to "+ Add a new pet", new_pet_path(current_user), class: "btn btn-add" %>
+          </div>
+        </div>
      </div>
-     <div class="col-3">
-        <%= link_to "Add a new pet", new_pet_path(current_user), class: "btn btn-outline-primary" %>
-     </div>
+
     </div>
   </div>
 </main>
