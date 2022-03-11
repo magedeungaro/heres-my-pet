@@ -1,24 +1,26 @@
-<main>
-  <div class="persona--template">
-    <div class="row">
-      <div class="col-12">
-        <p><%= @user.first_name %> <%= @user.last_name %></p>
+<div class="persona--template">
+  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>"></div>
+
+  <div class="persona--template__content py-5">
+    <div class="container w-80">
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
         <p><%= cl_image_tag @user.photo.key %></p>
         <p><%= @user.email %></p>
         <p><%= @user.address %></p>
         <p><%= @user.phone %></p>
         <p><%= @user.birthdate %></p>
         <p><%= @user.nickname %></p>
-        <div class="p-2 bg-dark bg-opacity-25">
-          <%= link_to edit_user_registration_path(@user), class: 'text-reset mx-2' do %>
+      <div class="p-2 bg-dark bg-opacity-25">
+         <%= link_to edit_user_registration_path(@user), class: 'text-reset mx-2' do %>
             <p>Edit</p><i class="fas fa-edit"></i>
           <% end %>
           <%= link_to user_path(@user), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
             <p>delete</p><i class="fas fa-trash-alt"></i>
           <% end %>
-        </div>
       </div>
+      <div class="col-3">
+        <%= link_to "Back to Dashboard", pets_path(current_user), class: "btn btn-outline-primary" %>
       </div>
     </div>
   </div>
-</main>
+</div>
