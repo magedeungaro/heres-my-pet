@@ -1,25 +1,23 @@
-<main>
-  <div class="persona--template">
-    <div class="row">
-      <div class="col-12">
-        <p><%= @pet.pet_type %></p>
-        <p><%= cl_image_tag @pet.photo.key %></p>
-        <p><%= @pet.name %></p>
-        <p><%= @pet.gender %></p>
-        <p><%= @pet.birthdate %></p>
-        <p><%= @pet.spayed %></p>
-        <p><%= @pet.additional_info %></p>
-        <p><%= @pet.lost %></p>
-        <div class="p-2 bg-dark bg-opacity-25">
+<div class="persona--template">
+  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>"></div>
+
+  <div class="persona--template__content py-5">
+    <div class="container w-80">
+      <p><%= @pet.pet_type %></p>
+      <p><%= @pet.name %></p>
+      <p><%= @pet.gender %></p>
+      <p><%= @pet.birthdate %></p>
+      <p><%= @pet.spayed %></p>
+      <p><%= @pet.additional_info %></p>
+      <p><%= @pet.lost %></p>
+      <div class="p-2 bg-dark bg-opacity-25">
           <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
             <p>Edit</p><i class="fas fa-edit"></i>
           <% end %>
           <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
             <p>delete</p><i class="fas fa-trash-alt"></i>
           <% end %>
-        </div>
-      </div>
       </div>
     </div>
   </div>
-</main>
+</div>
