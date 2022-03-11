@@ -16,3 +16,12 @@
     font-weight: bold;
   }
 }
+
+.btn-add {
+  background-color: #045A7C;
+  color: #FFFF;
+  font-weight:bolder;
+  border-radius: 10px;
+  @include d-flex-align(end);
+  height: 75px;
+}
