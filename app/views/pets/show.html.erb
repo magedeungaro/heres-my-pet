@@ -1,7 +1,7 @@
 <main>
   <div class="persona--template">
     <div class="row">
-      <div class="col-12">
+      <div class="col-8">
         <p><%= @pet.pet_type %></p>
         <p><%= cl_image_tag @pet.photo.key %></p>
         <p><%= @pet.name %></p>
@@ -21,6 +21,8 @@
         <% end %>
         </div>
       </div>
+      <div class="col-3">
+        <%= link_to "Back to Dashboard", pets_path(current_user), class: "btn btn-outline-primary" %>
       </div>
     </div>
   </div>
