@@ -1,0 +1,8 @@
+<div class = "container">
+  <div class = "row">
+   <h2> <% @pet.name %> Location </h2>
+      <% @tag_readings.each do |tag_reading|%>
+      <%= link_to tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p"), pet_tag_reading_path(id: tag_reading.id, pet_id: @pet.id) %>
+    <% end %>
+  </div>
+</div>

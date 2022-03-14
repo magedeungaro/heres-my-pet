@@ -1,0 +1,20 @@
+<main>
+  <div class="container w-80">
+    <h2 class="fw-bold pb-5">Help this pet</h2>
+      <div class="row">
+        <div class="col-12">
+          <%= simple_form_for [@pet, @tag_reading] do |f| %>
+            <%= f.input :message %>
+            <%= f.input :user_consent %>
+
+            <div class="text-center">
+              <div class="btn-group-vertical">
+                <%= f.button :submit, 'Help this pet', class: "btn btn-primary btn-md btn-block"%>
+                <%= link_to "cancel", pets_path(@pet), class: "btn btn-link btn-sm btn-block" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</main>
