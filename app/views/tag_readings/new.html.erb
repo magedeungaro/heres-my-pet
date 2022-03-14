@@ -5,13 +5,17 @@
         <div class="col-12">
           <%= simple_form_for [@pet, @tag_reading] do |f| %>
             <%= f.input :message %>
-            <%= f.input :user_consent %>
-
+            <div data-controller="geolocation">
+              <%= f.input :user_consent, as: :boolean, label: "Share Location?", input_html: { data: { target: "checkbox",
+                                                                                 action: "change->geolocation#shareLocation" }}%>
+              <div class="d-none">
+                <%= f.input :lat, input_html: { data:  { "geolocation-target": "lat"}} %>
+                <%= f.input :lng, input_html: { data:  { "geolocation-target": "lng"}} %>
+              </div>
+            </div>
             <div class="text-center">
-              <div class="btn-group-vertical">
                 <%= f.button :submit, 'Help this pet', class: "btn btn-primary btn-md btn-block"%>
                 <%= link_to "cancel", pets_path(@pet), class: "btn btn-link btn-sm btn-block" %>
-              </div>
             </div>
           <% end %>
         </div>
