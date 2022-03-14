@@ -34,3 +34,5 @@ window.addEventListener('load', () => {
     console.log('Service worker registration failed: ', registrationError);
   });
 });
+
+import "controllers"

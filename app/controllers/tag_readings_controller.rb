@@ -10,6 +10,8 @@ class TagReadingsController < ApplicationController
     @pet = Pet.find(params[:pet_id])
     @tag_reading = TagReading.find(params[:id])
     authorize @tag_reading
+    @markers = [{lat: @tag_reading.lat, lng: @tag_reading.lng}]
+
   end
 
   def new
