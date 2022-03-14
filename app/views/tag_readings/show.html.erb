@@ -1,0 +1,11 @@
+<div class = "container">
+  <div class = "row">
+   <p> Hi <%= current_user.first_name %> </p>
+    <h2> Somebody may have found <%= @pet.name %>! </h2>
+    <p><small> <%= @tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p") %> </small></p>
+      <textarea disabled class="form--message"><%= @tag_reading.message %> </textarea>
+      <div data-controller="mapbox">
+        <p>Insira seu mapa aqui</p>
+      </div>
+  </div>
+</div>

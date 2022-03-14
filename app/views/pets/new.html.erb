@@ -7,15 +7,16 @@
             <%= f.input :pet_type %>
             <%= f.input :photo, as: :file %>
             <%= f.input :name %>
-            <%= f.input :gender %>
+            <%= f.input :gender, as: :radio_buttons, collection: ['Male', 'Female'] %>
             <%= f.input :birthdate %>
             <%= f.input :spayed %>
             <%= f.input :additional_info %>
             <%= f.input :lost %>
-
-            <div class="py-3">
-              <%= f.button :submit, class: "btn btn-outline-primary"%>
-              <%= link_to "Back", pets_path(current_user), class: "btn btn-outline-primary" %>
+            <div class="text-center">
+              <div class="btn-group-vertical">
+                <%= f.button :submit, 'Add pet', class: "btn btn-primary btn-md btn-block"%>
+                <%= link_to "cancel", pets_path(current_user), class: "btn btn-link btn-sm btn-block" %>
+              </div>
             </div>
           <% end %>
         </div>
