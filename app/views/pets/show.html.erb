@@ -13,13 +13,14 @@
 
       <img src="<%= qr_code_url(request.path) %>" alt="">
       <a href="<%= qr_code_url(request.path) %>" download="qr_code">download qr code</a>
-      <div class="p-2 bg-dark bg-opacity-25">
+      <div class="p-2 bg-dark bg-opacity-25 <% if @user != current_user %> <%= "d-hide"%>">
           <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
             <p>Edit</p><i class="fas fa-edit"></i>
           <% end %>
           <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
             <p>delete</p><i class="fas fa-trash-alt"></i>
           <% end %>
+      <%end%>
       </div>
       <div class="col-3">
         <%= link_to "Back to Dashboard", pets_path(current_user), class: "btn btn-outline-primary" %>
