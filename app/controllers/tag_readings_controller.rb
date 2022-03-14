@@ -1,4 +1,5 @@
 class TagReadingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @pet = Pet.find(params[:pet_id])
