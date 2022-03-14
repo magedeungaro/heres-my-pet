@@ -1,3 +1,3 @@
 class Notification < ApplicationRecord
-  belongs_to :notifiable, polymorphyc: true
+  belongs_to :notifiable, polymorphic: true
 end
