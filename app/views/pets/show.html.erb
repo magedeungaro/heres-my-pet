@@ -3,28 +3,76 @@
 
   <div class="persona--template__content py-5">
     <div class="container w-80">
-      <p><%= @pet.pet_type %></p>
-      <p><%= @pet.name %></p>
-      <p><%= @pet.gender %></p>
-      <p><%= @pet.birthdate %></p>
-      <p><%= @pet.spayed %></p>
-      <p><%= @pet.additional_info %></p>
-      <p><%= @pet.lost %></p>
+      <h2 class="fw-bold py-3"><%= @pet.name %></h2>
 
-      <img src="<%= qr_code_url(request.path) %>" alt="">
-      <a href="<%= qr_code_url(request.path) %>" download="qr_code">download qr code</a>
-      <div class="p-2 bg-dark bg-opacity-25 <% if @user != current_user %> <%= "d-hide"%>">
-          <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
-            <p>Edit</p><i class="fas fa-edit"></i>
+      <div class="row">
+        <div class="col-6 col-md-4 col-lg-3">
+           <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Type</p>
+            <p class="info--group__content"><%= @pet.pet_type %></p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Gender</p>
+            <p class="info--group__content"><%= @pet.gender %></p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Birthdate</p>
+            <p class="info--group__content"><%= @pet.birthdate.strftime("%m/%d/%Y")%></p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Spayed?</p>
+            <p class="info--group__content"><%= @pet.spayed ? 'Yes' : 'No' %></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Additional Info</p>
+            <p class="info--group__content"><%= @pet.additional_info %></p>
+          </div>
+        </div>
+      </div>
+
+      <% if @pet.user == current_user %>
+        <div class="pet--qrcode text-center py-3">
+          <img src="<%= qr_code_url(request.path) %>" alt="<%= @pet.name %> QR Code">
+        </div>
+
+        <div class="pet--settings py-3">
+          <div class="p-2 bg-dark bg-opacity-25">
+
+              <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
+                <p>Edit</p><i class="fas fa-edit"></i>
+              <% end %>
+
+              <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
+                <p>delete</p><i class="fas fa-trash-alt"></i>
+              <% end %>
+
+          </div>
+
+          <div class="col-3">
+            <%= link_to "Back to Dashboard", pets_path(current_user), class: "btn btn-outline-primary" %>
+          </div>
+        </div>
+
+      <% elsif @reading %>
+        <div class="text-center py-3">
+          <% if @pet.lost %>
+            <p><%= @pet.name %> was reported <strong>lost!</strong></p>
+          <% else %>
+            <p><%= @pet.name %> might be lost!</p>
           <% end %>
-          <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
-            <p>delete</p><i class="fas fa-trash-alt"></i>
-          <% end %>
+            <p>You can help <%= @pet.name %> <strong>get back home!</strong></p>
+          <%= link_to 'I want to help!', new_pet_tag_reading_path(pet_id: @pet.id), class: 'btn btn-primary mt-3' %>
+        </div>
       <%end%>
-      </div>
-      <div class="col-3">
-        <%= link_to "Back to Dashboard", pets_path(current_user), class: "btn btn-outline-primary" %>
-      </div>
+
     </div>
   </div>
 </div>

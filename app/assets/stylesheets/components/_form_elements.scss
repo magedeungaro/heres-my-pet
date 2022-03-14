@@ -1,0 +1,12 @@
+.info--group {
+  p {margin: 0}
+
+  &__label {
+    color: $hmp-md-gray;
+    font-size: .8rem;
+  }
+
+  &__content {
+    color: $body-color;
+  }
+}
