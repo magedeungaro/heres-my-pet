@@ -9,6 +9,7 @@ class PetsController < ApplicationController
 
   def show
     authorize @pet
+    @reading = true if params[:qrcode]
   end
 
   def new
