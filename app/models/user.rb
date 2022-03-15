@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birthdate, presence: true
-  validates :nickname, uniqueness: true
+  validates :nickname, uniqueness: true, allow_blank: true
   has_one_attached :photo
 end
