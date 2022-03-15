@@ -1,4 +1,4 @@
-<main>
+<main class="py-5">
   <div class="container w-80">
     <h2 class="fw-bold pb-5">Add a new pet</h2>
       <div class="row">
@@ -14,8 +14,8 @@
             <%= f.input :lost %>
             <div class="text-center">
               <div class="btn-group-vertical">
-                <%= f.button :submit, 'Add pet', class: "btn btn-primary btn-md btn-block"%>
-                <%= link_to "cancel", pets_path(current_user), class: "btn btn-link btn-sm btn-block" %>
+                <%= f.button :submit, 'Add pet', class: "btn btn-primary btn-md btn-block mt-3"%>
+                <%= link_to "cancel", pets_path(current_user), class: "btn btn-outline-danger mt-3" %>
               </div>
             </div>
           <% end %>

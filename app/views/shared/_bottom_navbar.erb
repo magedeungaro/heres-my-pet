@@ -1,0 +1,46 @@
+<nav class="fixed-bottom navbar--bottom">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <%= link_to pets_path, class:'text-reset text-decoration-none' do %>
+            <div class="navbar--icon">
+              <i class="fas fa-cat"></i>
+            </div>
+            <div class="navbar--label">
+              Pets
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <%= link_to notifications_path, class: 'text-reset text-decoration-none' do%>
+            <div class="navbar--icon">
+              <i class="fas fa-bell"></i>
+            </div>
+            <div class="navbar--label">
+              Notifications
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <%= link_to user_path(current_user), class: 'text-reset text-decoration-none' do %>
+            <div class="navbar--icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="navbar--label">
+              Profile
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
