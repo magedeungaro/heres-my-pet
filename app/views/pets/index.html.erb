@@ -1,24 +1,32 @@
-<main>
-  <div class="container">
+<main class="py-5 mb-5">
+  <div class="container w-80 mb-5">
     <div class="row">
-      <div class="col-12 scrollable-col">
+      <div class="col-12">
+        <h2 class="fw-bold p-3"> My pets </h2>
         <% current_user.pets.each do |pet| %>
-            <div class = "row p-4">
-            <%= link_to pet_path(pet), style:"text-decoration:none;" do %>
-              <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+              <%= link_to pet_path(pet), style: "text-decoration:none;" do %>
                 <div class="pet--card mt-3" style="<%= pet.photo.attached? ? background_image(url: pet.photo.key, cloudinary: true) : background_image(cloudinary: false) %>">
-                  <p class="pet--card__content mx-2">
+                  <div class="pet--card__content py-3 px-4">
                     <i class="fas fa-paw"></i>
-                    <%= pet.name %>
-                  </p>
+                      <%= pet.name %>
+                  </div>
                 </div>
-              </div>
               <% end %>
             </div>
+          </div>
+
         <% end %>
-        <div class = "row p-4">
-          <div class="col-12">
-            <%= link_to "+ Add a new pet", new_pet_path(current_user), class: "btn btn-add" %>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="pet--card bg-primary pet--add mt-3">
+              <div class="pet--card__content py-3 px-4">
+                <i class="fas fa-plus-circle"></i>
+                Add new pet
+              </div>
+            </div>
           </div>
         </div>
      </div>
