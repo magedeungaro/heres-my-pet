@@ -26,7 +26,6 @@ class TagReadingsController < ApplicationController
     @tag_reading = TagReading.new(tag_reading_params)
     authorize @tag_reading
     @tag_reading.pet = @pet
-    #@tag_reading.save
     if @tag_reading.save
       PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now
       redirect_to root_path  # heroes page
