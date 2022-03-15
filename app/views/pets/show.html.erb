@@ -77,7 +77,13 @@
         </div>
       </div>
 
-      <% if @reading && @pet.user != current_user%>
+      <% if current_user == @pet.user %>
+        <div class="row justify-content-center py-3">
+          <div class="col-6">
+            <img src="<%= qr_code_url(request.path) %>" alt="">
+          </div>
+        </div>
+      <% elsif @reading %>
         <div class="text-center py-3">
           <% if @pet.lost %>
             <p><%= @pet.name %> was reported <strong>lost!</strong></p>
