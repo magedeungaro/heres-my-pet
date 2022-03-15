@@ -10,3 +10,47 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.settings--bar {
+  @include centered-w(85%);
+
+  &.light {
+    color: $white-opacity-90;
+  }
+
+  &.dark {
+    color: $hmp-md-gray;
+  }
+}
+
+.navbar--label {
+  font-size: .7rem;
+}
+
+.navbar--bottom {
+  background-color: $light-gray;
+  box-shadow: 0 5px 15px $black-opacity-20;
+  color: $hmp-md-gray;
+
+  .container {
+    @include centered-w(95%);
+  }
+}
+
+.navbar--button {
+  border-top: 5px solid transparent;
+  transition: .5s;
+  cursor: pointer;
+
+  &.active, &:hover {
+    color: $gray;
+    border-top: 5px solid $primary;
+  }
+}
+.navbar--icon {
+  @include centered-w(fit-content);
+}
+
+.dropdown--icon .dropdown-toggle::after {
+  content:none;
+}

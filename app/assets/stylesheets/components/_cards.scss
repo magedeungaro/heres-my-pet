@@ -2,7 +2,9 @@
   @include background-cover-center;
   @include d-flex-align(end);
   height: 150px;
+  cursor: pointer;
   border-radius: 10px;
+  transition: .3s;
   a {
     text-decoration: none;
   }
@@ -10,4 +12,49 @@
     color: $white-opacity-90;
   }
 
+  &:hover {
+    background-blend-mode: color-dodge;
+  }
+
+  &.pet--add {
+    height: 75px;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+
+.notifications--card {
+  position: relative;
+  height: 100px;
+  border-radius: 7px;
+  background-color: $body-bg;
+  transition: .3s;
+  cursor: pointer;
+
+  &__timestamp, &__settings {
+    position: absolute;
+    color: $hmp-md-gray;
+  }
+
+  &__timestamp {
+    bottom: 10px;
+    left: 15px;
+    font-size: .8rem;
+  }
+
+  &__settings {
+    right: 15px;
+    top: 15px;
+  }
+
+  &__content {
+    width: 90%;
+  }
+
+  &:hover {
+    background-color: $black-opacity-20;
+  }
 }

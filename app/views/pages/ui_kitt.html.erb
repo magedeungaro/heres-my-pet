@@ -1,7 +1,28 @@
-<main>
+<main class="">
   <%# begin of persona template => WHOLE PAGE %>
   <div class="persona--template">
-    <div class="persona--template__image" style="<%= background_image %>"></div>
+    <div class="persona--template__image" style="<%= background_image %>">
+
+      <div class="settings--bar py-4 light sticky-top">
+        <div class="settings--bar__container row justify-content-between">
+            <div class="col-1">
+              <a href="" class="text-reset"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="col-1">
+              <div class="dropdown dropdown--icon">
+                <i class="fas fa-ellipsis-v avatar dropdown-toggle" id="changeThisId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </i>
+
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="changeThisId">
+                  <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
 
     <div class="persona--template__content py-5">
       <div class="container w-80">
@@ -14,6 +35,18 @@
 
 
   <hr>
+
+  <div class="container w-80">
+    <div class="dropdown dropdown--icon">
+      <i class="fas fa-ellipsis-v avatar dropdown-toggle" id="changeThisId2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </i>
+
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="changeThisId2">
+        <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
+    </div>
+  </div>
 
   <%# buttons %>
   <div class="container w-80 py-5">
@@ -46,27 +79,154 @@
     </p>
 
     <% pet_image = 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' %>
-    <div class="pet--card" style="<%= background_image url: pet_image %>">
-      <div class="pet--card__content py-3 px-4">
-        <i class="fas fa-paw"></i>
-        Some pet here
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="pet--card mt-3" style="<%= background_image url: pet_image %>">
+          <div class="pet--card__content py-3 px-4">
+            <i class="fas fa-paw"></i>
+            Some pet here
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="pet--card bg-primary pet--add mt-3">
+          <div class="pet--card__content py-3 px-4">
+            <i class="fas fa-plus-circle"></i>
+            Add new pet
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="notifications--card shadow mt-3">
+          <div class="notifications--card__timestamp">
+            Just now
+          </div>
+          <div class="notifications--card__settings">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+          <div class="notifications--card__content p-3">
+            Some notification content
+          </div>
+        </div>
       </div>
     </div>
 
     <h2>Form elements</h2>
 
-    <div class="info--group py-3">
-      <p class="info--group__label fw-bold">Pet type</p>
-      <p class="info--group__content">Cat</p>
+    <div class="container w-80">
+      <div class="row">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Pet type</p>
+            <p class="info--group__content">Cat</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <textarea class="form--message p-3">Some message here</textarea>
+        </div>
+      </div>
+    </div>
+
+    <h2>Warnings</h2>
+
+    <div class="container w-80">
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="flash flash-danger flash--container">
+            <i class="fas fa-radiation text-danger flash--icon"></i>
+            <div class="flash--content row justify-content-end w-100">
+              <div class="col-10">
+                <p>Some content here</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="flash flash-warning flash--container">
+            <i class="fas fa-info text-warning flash--icon"></i>
+            <div class="flash--content row justify-content-end w-100">
+              <div class="col-10">
+                <p>Some content here</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="flash flash-success flash--container">
+            <i class="fas fa-check text-success flash--icon"></i>
+            <div class="flash--content row justify-content-end w-100">
+              <div class="col-10">
+                <p>Some content here</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
 
-
-  <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
-    <span><strong>!</strong> This UI kitt is to be viewed on small mobile viewports.</span>
-    <a data-bs-dismiss="alert" aria-label="Close">
-      <i class="far fa-window-close"></i>
-    </a>
-  </div>
 </main>
+
+
+
+<nav class="fixed-bottom navbar--bottom">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <div class="navbar--icon">
+            <i class="fas fa-cat"></i>
+          </div>
+          <div class="navbar--label">
+            Pets
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <div class="navbar--icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="navbar--label">
+            Notifications
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <div class="navbar--icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="navbar--label">
+            Profile
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>

@@ -13,3 +13,8 @@
   display: flex;
   align-items: $position;
 }
+
+@mixin centered-w($width) {
+  margin: 0 auto;
+  width: $width
+}
