@@ -46,3 +46,7 @@
 .navbar--icon {
   @include centered-w(fit-content);
 }
+
+.dropdown--icon .dropdown-toggle::after {
+  content:none;
+}
