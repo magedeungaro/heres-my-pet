@@ -6,6 +6,13 @@
   <title>Document</title>
 </head>
 <body>
-  <h1><%= @pet.user.first_name %>, Somebody may have found <%= @pet.name %></h1>
+  <div class = "container w-80">
+    <div class = "row">
+    <p> Hi <%= @pet.user.first_name %> </p>
+      <h2> Somebody may have found <%= @pet.name %>! </h2>
+      <p> <%= @tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p") %> </p>
+        <textarea disabled class="form--message", rows="5" cols="40", style="font-size:25px"><%= @tag_reading.message %> </textarea>
+    </div>
+  </div>
 </body>
 </html>
