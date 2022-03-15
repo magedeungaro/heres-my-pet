@@ -14,8 +14,7 @@
                 </i>
 
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="changeThisId">
-                  <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  <%= link_to "My Profile", ui_path, class: "dropdown-item" %>
                 </div>
               </div>
             </div>
@@ -42,8 +41,7 @@
       </i>
 
       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="changeThisId2">
-        <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <%= link_to "My Profile", ui_path, class: "dropdown-item" %>
       </div>
     </div>
   </div>
