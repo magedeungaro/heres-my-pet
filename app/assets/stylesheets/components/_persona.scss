@@ -13,3 +13,13 @@
     background-color: $body-bg
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .persona--template {
+    &__image {
+      @include background-cover-center;
+      height: 75vh;
+      background-repeat: no-repeat;
+    }
+  }
+}

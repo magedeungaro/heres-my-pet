@@ -1,7 +1,20 @@
-<main>
+<main class="">
   <%# begin of persona template => WHOLE PAGE %>
   <div class="persona--template">
-    <div class="persona--template__image" style="<%= background_image %>"></div>
+    <div class="persona--template__image" style="<%= background_image %>">
+
+      <div class="settings--bar py-4 light sticky-top">
+        <div class="settings--bar__container row justify-content-between">
+            <div class="col-1">
+              <a href="" class="text-reset"><i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="col-1">
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+      </div>
+
+    </div>
 
     <div class="persona--template__content py-5">
       <div class="container w-80">
@@ -154,4 +167,48 @@
   </div>
 
 
+
 </main>
+
+
+
+<nav class="fixed-bottom navbar--bottom">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <div class="navbar--icon">
+            <i class="fas fa-cat"></i>
+          </div>
+          <div class="navbar--label">
+            Pets
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <div class="navbar--icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="navbar--label">
+            Notifications
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="navbar--button py-3 text-center">
+          <div class="navbar--icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="navbar--label">
+            Profile
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
