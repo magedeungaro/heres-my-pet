@@ -46,22 +46,62 @@
     </p>
 
     <% pet_image = 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' %>
-    <div class="pet--card" style="<%= background_image url: pet_image %>">
-      <div class="pet--card__content py-3 px-4">
-        <i class="fas fa-paw"></i>
-        Some pet here
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="pet--card mt-3" style="<%= background_image url: pet_image %>">
+          <div class="pet--card__content py-3 px-4">
+            <i class="fas fa-paw"></i>
+            Some pet here
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="pet--card bg-primary pet--add mt-3">
+          <div class="pet--card__content py-3 px-4">
+            <i class="fas fa-plus-circle"></i>
+            Add new pet
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="notifications--card shadow mt-3">
+          <div class="notifications--card__timestamp">
+            Just now
+          </div>
+          <div class="notifications--card__settings">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+          <div class="notifications--card__content p-3">
+            Some notification content
+          </div>
+        </div>
       </div>
     </div>
 
     <h2>Form elements</h2>
 
     <div class="container w-80">
-      <div class="info--group py-3">
-        <p class="info--group__label fw-bold">Pet type</p>
-        <p class="info--group__content">Cat</p>
+      <div class="row">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Pet type</p>
+            <p class="info--group__content">Cat</p>
+          </div>
+        </div>
       </div>
 
-      <textarea class="form--message p-3">Some message here</textarea>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <textarea class="form--message p-3">Some message here</textarea>
+        </div>
+      </div>
     </div>
 
     <h2>Warnings</h2>
