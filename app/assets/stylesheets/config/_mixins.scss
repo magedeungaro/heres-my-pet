@@ -1,8 +1,14 @@
-@mixin background-top-contain-fixed {
+@mixin background-top-contain {
   background-position: top;
   background-size: contain;
+}
+
+@mixin background-top-contain-fixed {
+  @include background-top-contain;
   background-attachment: fixed;
 }
+
+
 
 @mixin background-cover-center {
   background-position: center;
