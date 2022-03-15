@@ -1,5 +1,38 @@
 <div class="persona--template">
-  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>"></div>
+  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>">
+    <% if @pet.user == current_user %>
+      <div class="settings--bar py-4 light sticky-top">
+        <div class="settings--bar__container row justify-content-between">
+            <div class="col-1">
+              <%= link_to pets_path, class:"text-reset" do %>
+                <i class="fas fa-arrow-left"></i>
+              <% end %>
+            </div>
+            <div class="col-1">
+              <div class="dropdown dropdown--icon">
+                <i class="fas fa-ellipsis-v avatar dropdown-toggle" id="changeThisId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </i>
+
+                <div class="dropdown-menu dropdown-menu-end py-3" aria-labelledby="changeThisId">
+                  <p>
+                    <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2 text-decoration-none' do %>
+                      <i class="fas fa-edit"></i> Edit pet
+                    <% end %>
+                  </p>
+
+                  <p>
+                    <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2 text-decoration-none' do %>
+                      <i class="fas fa-trash-alt"></i> Delete pet
+                    <% end %>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   <div class="persona--template__content py-5">
     <div class="container w-80">
@@ -38,33 +71,7 @@
         </div>
       </div>
 
-      <% if @pet.user == current_user %>
-        <div class="pet--qrcode text-center py-3">
-          <img src="<%= qr_code_url(request.path) %>" alt="<%= @pet.name %> QR Code">
-        </div>
-
-        <div class="pet--settings py-3">
-          <div class="p-2 bg-dark bg-opacity-25">
-
-              <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2' do %>
-                <p>Edit</p><i class="fas fa-edit"></i>
-              <% end %>
-
-              <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2' do %>
-                <p>delete</p><i class="fas fa-trash-alt"></i>
-              <% end %>
-
-          </div>
-
-          <div class="col-4">
-            <%= link_to "Location History", pet_tag_readings_path(@pet), class: "btn btn-outline-primary" %>
-          </div>
-          <div class="col-3">
-            <%= link_to "Back to Dashboard", pets_path(current_user), class: "btn btn-outline-primary" %>
-          </div>
-        </div>
-
-      <% elsif @reading %>
+      <% if @reading && @pet.user != current_user%>
         <div class="text-center py-3">
           <% if @pet.lost %>
             <p><%= @pet.name %> was reported <strong>lost!</strong></p>
