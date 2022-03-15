@@ -55,18 +55,63 @@
 
     <h2>Form elements</h2>
 
-    <div class="info--group py-3">
-      <p class="info--group__label fw-bold">Pet type</p>
-      <p class="info--group__content">Cat</p>
+    <div class="container w-80">
+      <div class="info--group py-3">
+        <p class="info--group__label fw-bold">Pet type</p>
+        <p class="info--group__content">Cat</p>
+      </div>
+
+      <textarea class="form--message p-3">Some message here</textarea>
+    </div>
+
+    <h2>Warnings</h2>
+
+    <div class="container w-80">
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="flash flash-danger flash--container">
+            <i class="fas fa-radiation text-danger flash--icon"></i>
+            <div class="flash--content row justify-content-end w-100">
+              <div class="col-10">
+                <p>Some content here</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="flash flash-warning flash--container">
+            <i class="fas fa-info text-warning flash--icon"></i>
+            <div class="flash--content row justify-content-end w-100">
+              <div class="col-10">
+                <p>Some content here</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="flash flash-success flash--container">
+            <i class="fas fa-check text-success flash--icon"></i>
+            <div class="flash--content row justify-content-end w-100">
+              <div class="col-10">
+                <p>Some content here</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
 
 
-  <div class="flash flash-warning alert alert-dismissible fade show" role="alert">
-    <span><strong>!</strong> This UI kitt is to be viewed on small mobile viewports.</span>
-    <a data-bs-dismiss="alert" aria-label="Close">
-      <i class="far fa-window-close"></i>
-    </a>
-  </div>
 </main>
