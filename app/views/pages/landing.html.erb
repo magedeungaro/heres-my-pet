@@ -1,8 +1,8 @@
 <div class="wave-top">
   <div class="svg">
-  </div>
-  <div class="logo--image col-4">
-    <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" alt="">
+    <div class="logo--image py-3 container w-80">
+      <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4" alt="">
+    </div>
   </div>
 </div>
 
@@ -15,7 +15,7 @@
   </div>
 </main>
 
-<div class="wave-bottom">
+<div class="wave-bottom fixed-bottom">
   <div class="svg">
     <div class="user--section row justify-content-center w-75">
       <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-light mt-3 col-12 col-md-6' %>
