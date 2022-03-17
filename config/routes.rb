@@ -14,12 +14,7 @@ Rails.application.routes.draw do
     resources :tag_readings, except: [:edit, :update, :destroy, :show]
   end
 
-<<<<<<< HEAD
-  resources :notifications, only: [:index]
-
-=======
   resources :tag_readings, only: :show
 
   resources :notifications, only: [:index, :show]
->>>>>>> c7699d6bba67cf646af161c8e5ed03f8642551da
 end
