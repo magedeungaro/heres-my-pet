@@ -6,11 +6,12 @@ export default class extends Controller {
   static targets = ["notifications"]
 
   connect() {
+
     this.channel = consumer.subscriptions.create(
       { channel: "UserChannel", id: this.userIdValue },
-      {received: (data) => {debugger} }
-      // { received: data => this.notificationsTarget.insertAdjacentHTML("beforeend", data) }
+      // {received: (data) => {debugger} }
+      { received: data => this.notificationsTarget.insertAdjacentHTML("beforeend", data) }
       )
-    console.log(`Subscribed to the chatroom with the id ${this.userIdValue}.`)
+    console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`)
   }
 }
