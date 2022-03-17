@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Here's my pet"
+meta_title: "Here's my pet - identify your pet without spending too much"
+meta_description: "Here's my pet empowers pet owners to identify their pets without the need to buy a tag. Just do your own."
+meta_image: "heres_my_pet_og_banner.jpeg" # should exist in `app/assets/images/`
+twitter_account: "@heresmy_pet"   # required for Twitter Cards
