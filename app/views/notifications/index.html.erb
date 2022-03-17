@@ -1,10 +1,16 @@
-<div class="container notification"
+<main class="py-3">
+  <div class="container">
+    <h2 class="fw-bolder pt-3 mt-3 w-90">Notifications</h2>
+    <div class="notification mt-3 py-3"
   data-controller="user-subscription"
   data-user-subscription-user-id-value="<%= current_user.id %>"
 >
-  <div class="notifications" data-user-subscription-target="notifications">
-    <% @notifications.each do |notification| %>
-      <%= render "notification", notification: notification %>
-    <% end %>
+    <div class="notifications" data-user-subscription-target="notifications">
+      <% @notifications.each do |notification| %>
+        <%= render "notification", notification: notification %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+  </div>
+</main>

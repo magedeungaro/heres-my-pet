@@ -3,15 +3,20 @@ class TagReadingsController < ApplicationController
 
   def index
     @pet = Pet.find(params[:pet_id])
-    @tag_readings = policy_scope(TagReading).order(created_at: :DESC).limit(10)
+    @tag_readings = policy_scope(TagReading).where(pet_id: @pet).order(created_at: :DESC).limit(10)
   end
 
   def show
+    if params[:notification_id]
+      @notification = Notification.find(params[:notification_id])
+      @notification.viewed = true
+      @notification.save
+    end
+
     @tag_reading = TagReading.find(params[:id])
     @pet = @tag_reading.pet
     authorize @tag_reading
     @markers = [{lat: @tag_reading.lat, lng: @tag_reading.lng}]
-
   end
 
   def new

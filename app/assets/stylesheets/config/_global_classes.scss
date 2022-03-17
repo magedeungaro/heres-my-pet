@@ -1,0 +1,24 @@
+.page--container {
+  min-height: 100vh;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+}
+
+.w-80 {
+  @include centered-w(80%);
+}
+
+.w-90 {
+  @include centered-w(90%);
+}
+
+main {
+  min-height: 95vh;
+}
+
+.margin-auto {
+  margin: 0 auto!important;
+}

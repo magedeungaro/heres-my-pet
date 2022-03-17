@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_17_033725) do
+ActiveRecord::Schema.define(version: 2022_03_17_142346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_033725) do
     t.uuid "notifiable_id", null: false
     t.text "content"
     t.uuid "user_id", null: false
+    t.boolean "viewed", default: false
     t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable"
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
