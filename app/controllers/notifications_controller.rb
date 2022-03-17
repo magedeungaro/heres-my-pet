@@ -7,5 +7,4 @@ class NotificationsController < ApplicationController
     @notification = Notification.find(params[:id])
     "#{notf.notifiable_type}sController".constantize.send(:show)
   end
-
 end
