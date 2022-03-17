@@ -1,42 +1,10 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
 
-  .container{
-    margin: 0 auto; width: 80%;
-  }
-
-  .teste{
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-  }
-
-
-</style>
-</head>
-<body>
   <div class="container">
-    <div>
     <h2> Hi <%= @pet.user.first_name %> </h2>
       <h3> Somebody may have found <%= @pet.name %>! </h3>
       <p> <%= @tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p") %> </p>
         <p style="font-size:25px"> <%= @tag_reading.message %> </p>
-        <div class= "teste" type= "button">
-          <%= link_to('Location', URI.join(root_url, pet_tag_reading_url(pet_id: @pet.id, id: @tag_reading.id)).to_s) %>
+        <div>
+        <a href="<%= URI.join(root_url, pet_tag_reading_url(pet_id: @pet.id, id: @tag_reading.id).to_s) %>"style="font-size: 25px">See details</a>
         </div>
-    </div>
   </div>
-
-</body>
-</html>

@@ -1,4 +1,5 @@
 class PetNotificationMailer < ApplicationMailer
+  layout "mailer"
   default from: 'heresmypet@gmail.com'
 
   def pet_location_email
@@ -6,6 +7,9 @@ class PetNotificationMailer < ApplicationMailer
     @pet = @tag_reading.pet
     @user = @pet.user
 
-    mail(to: @user.email, subject:"Somebody may have found #{@pet.name}")
+
+    mail(to: @user.email, subject:"Somebody may have found #{@pet.name}") do |format|
+      format.html { render layout: 'mailer' }
+    end
   end
 end
