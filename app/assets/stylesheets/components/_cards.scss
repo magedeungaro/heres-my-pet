@@ -47,8 +47,12 @@
   }
 
   &__settings {
-    right: 15px;
+    right: 0;
     top: 15px;
+
+    i {
+      padding: 5px 15px;
+    }
   }
 
   &__content {
