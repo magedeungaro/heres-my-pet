@@ -1,6 +1,17 @@
 <main class="pt-3 mt-3">
+
+  <div class="settings--bar py-4 sticky-top">
+    <div class="settings--bar__container row">
+        <div class="col-1">
+          <%= link_to pet_path(@pet), class:"text-reset text-decoration-none" do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
   <div class="container row margin-auto">
-  <h2 class="py-3"> <%= @pet.name %>'s location history </h2>
+    <h2 class="py-3 fw-bold"> <%= @pet.name %>'s location history </h2>
     <% @pet.tag_readings.each do |tag_reading|%>
       <%= link_to tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p"), tag_reading_path(id: tag_reading.id, pet_id: @pet.id), class:'btn btn-outline-primary p-3' %>
     <% end %>
