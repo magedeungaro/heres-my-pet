@@ -3,7 +3,7 @@ class TagReadingsController < ApplicationController
 
   def index
     @pet = Pet.find(params[:pet_id])
-    @tag_readings = policy_scope(TagReading).order(created_at: :DESC).limit(10)
+    @tag_readings = policy_scope(TagReading).where(pet_id: @pet).order(created_at: :DESC).limit(10)
   end
 
   def show
