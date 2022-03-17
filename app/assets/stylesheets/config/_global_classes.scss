@@ -14,3 +14,7 @@
 .w-90 {
   @include centered-w(90%);
 }
+
+main {
+  min-height: 95vh;
+}
