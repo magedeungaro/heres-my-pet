@@ -10,7 +10,7 @@ export default class extends Controller {
     this.channel = consumer.subscriptions.create(
       { channel: "UserChannel", id: this.userIdValue },
       // {received: (data) => {debugger} }
-      { received: data => this.notificationsTarget.insertAdjacentHTML("beforeend", data) }
+      { received: data => this.notificationsTarget.insertAdjacentHTML("afterbegin", data) }
       )
     console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`)
   }
