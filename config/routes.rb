@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   resources :pets do
-    resources :tag_readings, except: [:edit, :update, :destroy]
+    resources :tag_readings, except: [:edit, :update, :destroy, :show]
   end
 
-  resources :notifications, only: [:index]
+  resources :tag_readings, only: :show
+
+  resources :notifications, only: [:index, :show, :destroy]
 end
