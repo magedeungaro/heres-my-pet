@@ -15,5 +15,8 @@ Rails.application.routes.draw do
 
   resources :tag_readings, only: :show
 
-  resources :notifications, only: [:index, :show, :destroy]
+  resources :notifications, only: [:index, :show, :destroy] do
+    post :mark_as_read, on: :collection
+    post :mark_as_read, on: :member
+  end
 end

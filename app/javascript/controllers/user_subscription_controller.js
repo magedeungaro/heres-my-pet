@@ -13,5 +13,16 @@ export default class extends Controller {
       { received: data => this.notificationsTarget.insertAdjacentHTML("afterbegin", data) }
       )
     console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`)
+    console.log(this.notificationTarget.count)
   }
+  count_notifications(data){
+    let unreadCount = 0
+    $.each(data, (i, notification) => {
+      if (notification.unread) {
+        unreadCount += 1
+      }
+    });
+    this.unreadCountTarget.innerHTML = unreadCount
+  }
+
 }
