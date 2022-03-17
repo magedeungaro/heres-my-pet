@@ -1,8 +1,8 @@
-<div class = "container">
-  <div class = "row">
-   <h2> <%= @pet.name %> - Location History </h2>
-      <% @pet.tag_readings.each do |tag_reading|%>
-      <%= link_to tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p"), tag_reading_path(id: tag_reading.id, pet_id: @pet.id) %>
+<main class="pt-3 mt-3">
+  <div class="container row margin-auto">
+  <h2 class="py-3"> <%= @pet.name %>'s location history </h2>
+    <% @pet.tag_readings.each do |tag_reading|%>
+      <%= link_to tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p"), tag_reading_path(id: tag_reading.id, pet_id: @pet.id), class:'btn btn-outline-primary p-3' %>
     <% end %>
   </div>
-</div>
+</main>

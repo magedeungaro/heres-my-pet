@@ -1,16 +1,32 @@
 <div class="row justify-content-center">
+
   <div class="col-12 col-md-6 col-lg-4">
-    <div class="notifications--card shadow mt-3">
-      <%= link_to polymorphic_url(notification.notifiable), class: "text-reset text-decoration-none" do%>
-        <div class="notifications--card__timestamp">
-          <%= notification.created_at.strftime("%a %b %e at %l:%M %p") %>
+
+    <div class="notifications--card mt-2 <%= "fw-bold bg-warning bg-opacity-25" unless notification.viewed %>">
+
+      <div class="notifications--card__timestamp">
+        <%= notification.created_at.strftime("%a %b %e at %l:%M %p") %>
+      </div>
+
+      <div class="notifications--card__settings">
+        <div class="dropdown dropdown--icon">
+          <i class="fas fa-ellipsis-v dropdown-toggle" id="<%= notification.id %>" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </i>
+
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="<%= notification.id %>">
+            <%= link_to "Delete", notification_path(notification), method: :delete, class: "dropdown-item" %>
+          </div>
         </div>
-        <div class="notifications--card__settings">
-        </div>
-        <div class="notifications--card__content p-3">
-          <%= notification.content %>
-        </div>
+      </div>
+
+      <%= link_to polymorphic_url(notification.notifiable, notification_id: notification.id), class: "text-reset text-decoration-none" do%>
+      <div class="notifications--card__content p-3">
+        <%= notification.content %>
+      </div>
       <% end %>
+
     </div>
+
   </div>
+
 </div>

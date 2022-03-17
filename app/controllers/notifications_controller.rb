@@ -3,8 +3,11 @@ class NotificationsController < ApplicationController
     @notifications = policy_scope(Notification).where(user_id: current_user.id)
   end
 
-  def show
+  def destroy
     @notification = Notification.find(params[:id])
-    "#{notf.notifiable_type}sController".constantize.send(:show)
+    authorize @notification
+    @notification.destroy
+
+    redirect_to notifications_path
   end
 end
