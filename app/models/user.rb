@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :pets
-  has_many :notifications, through: :notifiable
+  has_many :notifications
 
   validates :first_name, presence: true
   validates :last_name, presence: true
