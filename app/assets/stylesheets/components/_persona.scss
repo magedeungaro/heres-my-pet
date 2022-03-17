@@ -1,4 +1,6 @@
 .persona--template {
+  overflow: hidden;
+
   &__image {
     @include background-top-contain-fixed;
     height: 45vh;
