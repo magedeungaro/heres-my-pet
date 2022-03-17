@@ -7,8 +7,8 @@ class TagReadingsController < ApplicationController
   end
 
   def show
-    @pet = Pet.find(params[:pet_id])
     @tag_reading = TagReading.find(params[:id])
+    @pet = @tag_reading.pet
     authorize @tag_reading
     @markers = [{lat: @tag_reading.lat, lng: @tag_reading.lng}]
 
@@ -27,8 +27,18 @@ class TagReadingsController < ApplicationController
     authorize @tag_reading
     @tag_reading.pet = @pet
     if @tag_reading.save
+
+      @notification = Notification.new(notifiable: @tag_reading)
+      @notification.content = "Somebody may have found #{@pet.name}!"
+      @notification.user = @pet.user
+      @notification.save
+      UserChannel.broadcast_to(@pet.user, render_to_string(partial: "notifications/notification", locals: {notification: @notification}))
+
       PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now
+
       redirect_to root_path  # heroes page
+
+      return
     else
       render :new
     end

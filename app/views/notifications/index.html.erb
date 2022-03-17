@@ -1,0 +1,10 @@
+<div class="container notification"
+  data-controller="user-subscription"
+  data-user-subscription-user-id-value="<%= current_user.id %>"
+>
+  <div class="notifications" data-user-subscription-target="notifications">
+    <% @notifications.each do |notification| %>
+      <%= render "notification", notification: notification %>
+    <% end %>
+  </div>
+</div>
