@@ -31,6 +31,7 @@
   background-color: $light-gray;
   box-shadow: 0 5px 15px $black-opacity-20;
   color: $hmp-md-gray;
+  position: sticky;
 
   .container {
     @include centered-w(95%);
