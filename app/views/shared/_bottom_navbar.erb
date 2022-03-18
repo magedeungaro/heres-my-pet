@@ -16,10 +16,10 @@
       </div>
 
       <div class="col-4">
-        <div class="navbar--button py-3 text-center">
+        <div class="navbar--button py-3 text-center" data-controller = "count-notifications" data-count-notification-user-id-value="<%= current_user.id %>
           <%= link_to notifications_path, class: 'text-reset text-decoration-none' do%>
-            <div class="navbar--icon">
-              <i class="fas fa-bell"></i>
+            <div class="navbar--icon" >
+              <i class="fas fa-bell" data-target= "counter"><%= @notifications.unread.length %></i>
             </div>
             <div class="navbar--label">
               Notifications

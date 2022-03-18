@@ -9,20 +9,22 @@ export default class extends Controller {
 
     this.channel = consumer.subscriptions.create(
       { channel: "UserChannel", id: this.userIdValue },
-      // {received: (data) => {debugger} }
-      { received: data => this.notificationsTarget.insertAdjacentHTML("afterbegin", data) }
+      { received: data => this.notificationsTarget.insertAdjacentHTML("afterbegin", data) },
+
       )
-    console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`)
-    console.log(this.notificationTarget.count)
+    console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`);
+
   }
-  count_notifications(data){
-    let unreadCount = 0
-    $.each(data, (i, notification) => {
-      if (notification.unread) {
-        unreadCount += 1
-      }
-    });
-    this.unreadCountTarget.innerHTML = unreadCount
-  }
+  //   data.forEach(function(notification, i) {
+  //     console.log('[forEach]', notification, i);
+  //     //   if (notification.unread) {
+  //     //     unreadCount += 1
+  //     //   }
+  //     // });
+  //     // console.log(unreadCount)
+  //     // unreadCount
+  // })
+  //   // $.each(data, (i, notification) => {
+  // }
 
 }
