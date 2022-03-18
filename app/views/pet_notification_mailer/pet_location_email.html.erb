@@ -1,32 +1,102 @@
-
+<!DOCTYPE html>
+<html>
 <head>
 <style>
 </style>
 </head>
 
 <body style="margin: 0; padding: 0;">
-<table border="1" cellpadding="0" cellspacing="0" width="100%">
- <tr>
-  <td>
-   Olá!
-  </td>
- </tr>
-</table>
+  <table bordercolor="#ff00ff" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+
+    <tr>
+    <td bgcolor="#045A7C" style="padding: 40px 30px 40px 30px; color: #ffffff">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <tr>
+      <td>
+        <h3> Hi <%= @pet.user.first_name %> </h3>
+      </td>
+     </tr>
+     <tr>
+      <td>
+        <h2> <b>Somebody may have found <%= @pet.name %>! </b></h2>
+        <a href="<%= URI.join(root_url, tag_reading_url(pet_id: @pet.id, id: @tag_reading.id).to_s) %>"style="font-weight: 800;
+                                                                                                        font-family: 'Open Sans',
+                                                                                                          Arial, Helvetica,
+                                                                                                          sans-serif;
+                                                                                                        border-radius: 3px;
+                                                                                                        color: #ffffff;
+                                                                                                        display: inline-block;
+                                                                                                        font-size: 16px;
+                                                                                                        background-color: #f26f39;
+                                                                                                        line-height: 20px;
+                                                                                                        padding: 15px 0px 15px 0px;
+                                                                                                        text-align: center;
+                                                                                                        text-decoration: none;
+                                                                                                        width: 560px;">See details</a>
+      </td>
+     </tr>
+     <tr>
+      <td>
+        <p bgcolor= "#848484" style="font-size:25px"> <%= @tag_reading.message %> </p>
+      </td>
+     </tr>
+    </table>
+   </td>
+    </tr>
+    <tr>
+      <td bgcolor="#F43471" style="padding: 30px 30px 30px 30px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+        <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 18px;">
+          &reg; <a href="" style="
+                                  color: #ffffff;
+                                  text-decoration: underline;">
+        <span style="color: #ffffff">Heres My Pet</span>
+      </a>
+          <p style="color: #ffffff; font-family: Arial, sans-serif; font-size: 18px;">Protect your pet without spending too much</p>
+        </td>
+
+        <td align="right">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+          <td>
+            <a href="http://www.twitter.com/">
+            <img src="images/tw.gif" alt="Twitter" width="38" height="38" style="display: block;" border="0" />
+            </a>
+          </td>
+          <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+          <td>
+            <a href="http://www.twitter.com/">
+            <img src="images/fb.gif" alt="Facebook" width="38" height="38" style="display: block;" border="0" />
+            </a>
+          </td>
+          </tr>
+        </table>
+
+        </tr>
+      </table>
+    </td>
+    </tr>
+  </table>
 </body>
+</html>
 
 
 
+  <div class="container">
+    <h2> Hi <%= @pet.user.first_name %> </h2>
+      <h3> Somebody may have found <%= @pet.name %>! </h3>
+      <p> <%= @tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p") %> </p>
+        <p style="font-size:25px"> <%= @tag_reading.message %> </p>
+        <div>
+        <a href="<%= URI.join(root_url, tag_reading_url(pet_id: @pet.id, id: @tag_reading.id).to_s) %>"style="font-size: 25px">See details</a>
+        </div>
+  </div>
 
 
-
-
-
-  # <div class="container">
-  #   <h2> Hi <%= @pet.user.first_name %> </h2>
-  #     <h3> Somebody may have found <%= @pet.name %>! </h3>
-  #     <p> <%= @tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p") %> </p>
-  #       <p style="font-size:25px"> <%= @tag_reading.message %> </p>
-  #       <div>
-  #       <a href="<%= URI.join(root_url, pet_tag_reading_url(pet_id: @pet.id, id: @tag_reading.id).to_s) %>"style="font-size: 25px">See details</a>
-  #       </div>
-  # </div>
+  <a href="" style="
+                                              color: #ffffff;
+                                              text-decoration: underline;
+                                            ">
+                                            <span style="color: #ffffff">Cancelar assinatura</span>
+                                          </a>

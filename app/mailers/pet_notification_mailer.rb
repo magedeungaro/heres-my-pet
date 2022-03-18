@@ -8,8 +8,6 @@ class PetNotificationMailer < ApplicationMailer
     @user = @pet.user
 
 
-    mail(to: @user.email, subject:"Somebody may have found #{@pet.name}") do |format|
-      format.html { render layout: 'mailer' }
-    end
+    mail(to: @user.email, subject:"Somebody may have found #{@pet.name}")
   end
 end
