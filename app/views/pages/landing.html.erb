@@ -30,6 +30,38 @@
   </div>
 
   <div class="web" data-landing-page-target="web">
-    <h1>Pela web!</h1>
+
+    <% background_img = 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80' %>
+
+    <header style="<%= background_image(url: background_img, cloudinary: false) %>">
+      <div class="container pb-5">
+        <div class="logo--image py-3 container w-80">
+          <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4" alt="">
+        </div>
+
+        <div class="header--content py-5 text-white text-center">
+          <h2 class="fw-bold">Losing a pet is heartbreaking</h2>
+
+          <p class="pt-3">HMP is here to empower you so your pet have more chances to come back home</p>
+
+          <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-warning fw-bold mt-5' %>
+        </div>
+      </div>
+    </header>
+
+    <section class="showcase py-3">
+      <div class="container">
+        <h2 class="fw-bold py-3">How does it work?</h2>
+
+        <div class="row justify-content-center pt-3">
+          <div class="col-12 col-6 col-lg-8">
+
+          </div>
+          <div class="col-6 col-lg-4">
+            <%= image_tag('pet_profile_page.png')  %>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
