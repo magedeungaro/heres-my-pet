@@ -3,16 +3,16 @@ import consumer from "../channels/consumer"
 
 export default class extends Controller {
   static values = { userId: String }
-  static targets = ["notifications"]
+  static targets = ["counter"]
 
   connect() {
 
     this.channel = consumer.subscriptions.create(
-      { channel: "UserChannel", id: this.userIdValue },
-      { received: data => this.notificationsTarget.insertAdjacentHTML("afterbegin", data) }
+      { channel: "NotificationChannel", id: this.userIdValue },
+      { received: data => this.counterTarget.innerHTML = data }
 
       )
-    console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`);
+    console.log( this.counterTarget);
 
   }
 }
