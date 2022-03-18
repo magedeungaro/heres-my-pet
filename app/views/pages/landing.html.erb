@@ -1,25 +1,35 @@
-<div class="wave-top">
-  <div class="svg">
-    <div class="logo--image py-3 container w-80">
-      <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4" alt="">
-    </div>
-  </div>
-</div>
+<div class="controller" data-controller="landing-page">
+  <div class="standalone d-none" data-landing-page-target="standalone">
 
-<main>
-  <div class="container w-75 text-center py-3 mt-3">
-    <h1><strong>Identify and locate your pet</strong></h1>
-    <div class="mt-3">
-      <p>Protect your pet <span class="text-primary"><strong>without spending</strong></span> too much.</p>
+    <div class="wave-top">
+      <div class="svg">
+        <div class="logo--image py-3 container w-80">
+          <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4" alt="">
+        </div>
+      </div>
     </div>
-  </div>
-</main>
 
-<div class="wave-bottom fixed-bottom">
-  <div class="svg">
-    <div class="user--section row justify-content-center w-75">
-      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-light mt-3 col-12 col-md-6' %>
-      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-tertiary text-white mt-3 col-12 col-md-6' %>
+    <main>
+      <div class="container w-75 text-center py-3 mt-3">
+        <h1><strong>Identify and locate your pet</strong></h1>
+        <div class="mt-3">
+          <p>Protect your pet <span class="text-primary"><strong>without spending</strong></span> too much.</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="wave-bottom fixed-bottom">
+      <div class="svg">
+        <div class="user--section row justify-content-center w-75">
+          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-light mt-3 col-12 col-md-6' %>
+          <%= link_to 'Log in', new_user_session_path, class: 'btn btn-tertiary text-white mt-3 col-12 col-md-6' %>
+        </div>
+      </div>
     </div>
+
+  </div>
+
+  <div class="web" data-landing-page-target="web">
+    <h1>Pela web!</h1>
   </div>
 </div>
