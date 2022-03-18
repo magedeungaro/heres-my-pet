@@ -37,7 +37,12 @@ class TagReadingsController < ApplicationController
       @notification.content = "Somebody may have found #{@pet.name}!"
       @notification.user = @pet.user
       @notification.save
-      UserChannel.broadcast_to(@pet.user, render_to_string(partial: "notifications/notification", locals: {notification: @notification}))
+
+      UserChannel.broadcast_to(@pet.user, {
+        html: render_to_string(partial: "notifications/notification", locals: {notification: @notification}),
+        push_data: @notification.to_json
+      })
+
       NotificationChannel.broadcast_to(@pet.user, render_to_string(partial: "shared/notifications_navbar", locals: {counter: @pet.user.notifications.unread.length}))
 
       PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now

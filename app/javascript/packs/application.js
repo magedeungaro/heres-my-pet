@@ -7,7 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import 'bootstrap';
+import 'bootstrap'
+import "controllers"
 
 Rails.start()
 Turbolinks.start()
@@ -35,4 +36,10 @@ window.addEventListener('load', () => {
   });
 });
 
-import "controllers"
+if ('Notification' in window && navigator.serviceWorker) {
+  // if (Notification.permission !== 'denied' || Notification.permission === "default") {
+    Notification.requestPermission(function(status) {
+      console.log('Notification permission status:', status);
+    });
+  // }
+}
