@@ -10,6 +10,16 @@ class NotificationsController < ApplicationController
 
   end
 
+  def notifications_counter
+    @notifications = policy_scope(Notification).where(user_id: current_user.id).unread.length
+    respond_to do |format|
+      format.json {
+        render json: @notifications
+      }
+    end
+
+  end
+
   def destroy
     @notification = Notification.find(params[:id])
     authorize @notification

@@ -7,18 +7,15 @@ export default class extends Controller {
 
   connect() {
 
-    this.channel = consumer.subscriptions.create(
-      { channel: "UserChannel", id: this.userIdValue },
-      { received: data => this.counterTarget.text(this.countNotifications(data)) }
-      )
-    console.log(`USER ID SUBSCRIPTION ${this.userIdValue}.`);
-
+    fetch('/notifications/notifications_counter', {
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    })
+      .then(response => response.json())
+      .then((data) => {
+        this.counterTarget.innerText = data
+      })
   }
-  countNotifications(data){
-    let unreadCount = 0
-    if (data.unread) {
-      unreadCount += 1
-    }
-    return unreadCount
-  };
 }

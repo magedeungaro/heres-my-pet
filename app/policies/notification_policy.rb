@@ -18,4 +18,7 @@ class NotificationPolicy < ApplicationPolicy
     true
   end
 
+  def notifications_counter?
+    true
+  end
 end
