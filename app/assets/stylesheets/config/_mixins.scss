@@ -8,8 +8,6 @@
   background-attachment: fixed;
 }
 
-
-
 @mixin background-cover-center {
   background-position: center;
   background-size: cover;
@@ -23,4 +21,8 @@
 @mixin centered-w($width) {
   margin: 0 auto;
   width: $width
+}
+
+@mixin text-shadow {
+  text-shadow: 1px 1px 1px $black-opacity-20;
 }

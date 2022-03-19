@@ -9,11 +9,18 @@
   }
 }
 
-.web header {
-  background-size: cover;
-  background-position: top;
+.web {
+  header {
+    @include text-shadow;
+    background-size: cover;
+    background-position: top;
+  }
 }
 
-@media and screen(min: 1024px) {
-
+@media (min-width: 1024px) {
+  .web {
+    header {
+      background-position: center;
+    }
+  }
 }

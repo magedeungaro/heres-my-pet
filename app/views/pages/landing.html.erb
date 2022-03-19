@@ -36,11 +36,11 @@
     <header style="<%= background_image(url: background_img, cloudinary: false) %>">
       <div class="container pb-5">
         <div class="logo--image py-3 container w-80">
-          <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4" alt="">
+          <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4 col-md-6 col-lg-1" alt="">
         </div>
 
-        <div class="header--content py-5 text-white text-center">
-          <h2 class="fw-bold">Losing a pet is heartbreaking</h2>
+        <div class="header--content py-5 my-5 text-white text-center">
+          <h2 class="fw-bold"><strong>Losing a pet is heartbreaking</strong></h2>
 
           <p class="pt-3">HMP is here to empower you so your pet have more chances to come back home</p>
 
@@ -51,23 +51,33 @@
 
     <section class="showcase py-3">
       <div class="container">
-        <h2 class="fw-bold py-3">How does it work?</h2>
+        <h2 class="fw-bold py-3"><strong>How does it work?</strong></h2>
 
-        <div class="row justify-content-center pt-3">
-          <div class="col-12 col-6 col-lg-8">
-            <p>1. Create register your pet</p>
+        <div class="row justify-content-around pt-3">
+          <div class="col-12 col-6 col-lg-7">
+            <p>1. Register your pet</p>
             <p>2. Use the generated QR Code <strong>wherever you want!</strong></p>
             <div class="opacity-75">
               <p> - Got a bluetooth tag? Stick it on it! A key id tag? Put it on it!</p>
               <p> - Put your pet QR code in <strong>any custom tag</strong> you have.</p>
             </div>
             <p>3. Pet ran away? When somebody finds your pet and <strong>scans the QR code</strong>, they can send you a location and a message.</p>
+            <p>4. Optional: You can share your info to be displayed when somebody scans the QR code.</p>
           </div>
-          <div class="col-6 col-lg-4">
+
+          <div class="col-6 col-lg-2">
             <%= image_tag('pet_profile_page.png')  %>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-6 text-center">
+            <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-warning fw-bold mt-5' %>
           </div>
         </div>
       </div>
     </section>
   </div>
 </div>
+
+<%= render 'shared/footer' %>

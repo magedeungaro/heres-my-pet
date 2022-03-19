@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get 'onboarding', to: 'pages#onboarding', as: :onboarding
   get 'ui-kitt', to: 'pages#ui_kitt', as: :ui
+  get 'privacy-policy', to: 'pages#privacy_policy', as: :privacy_policy
+  get 'about', to: 'pages#about', as: :about
+  get 'contact', to: 'pages#contact', as: :contact
 
   devise_for :users
 
