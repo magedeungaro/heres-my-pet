@@ -35,8 +35,9 @@
 
     <header style="<%= background_image(url: background_img, cloudinary: false) %>">
       <div class="container pb-5">
-        <div class="logo--image py-3 container w-80">
+        <div class="logo--image py-3 row justify-content-between">
           <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4 col-md-6 col-lg-1" alt="">
+          <%= link_to 'Log in', new_user_session_path, class: 'btn btn-tertiary text-white col-4 col-md-6 col-lg-1' %>
         </div>
 
         <div class="header--content py-5 my-5 text-white text-center">
@@ -65,7 +66,7 @@
             <p>4. Optional: You can share your info to be displayed when somebody scans the QR code.</p>
           </div>
 
-          <div class="col-6 col-lg-2">
+          <div class="col-6 col-lg-2 text-center">
             <%= image_tag('pet_profile_page.png')  %>
           </div>
         </div>
@@ -77,7 +78,8 @@
         </div>
       </div>
     </section>
+
+    <%= render 'shared/footer' %>
+
   </div>
 </div>
-
-<%= render 'shared/footer' %>
