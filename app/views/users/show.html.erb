@@ -69,7 +69,7 @@
         <div class="col-6 col-md-4 col-lg-3">
           <div class="info--group py-3">
             <p class="info--group__label fw-bold">Birthdate</p>
-            <p class="info--group__content"><%= @user.birthdate %></p>
+            <p class="info--group__content"><%= @user.birthdate.strftime("%m/%d/%Y") %></p>
           </div>
         </div>
         <div class="col-12">
