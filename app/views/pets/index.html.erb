@@ -1,6 +1,6 @@
-<main class="py-5 mb-5">
+<main class="py-5 mb-5 pet--main">
   <div class="container mb-5">
-   <div class="row pt-3 mt-3 justify-content-between margin-auto">
+   <div class="row pt-4 pb-3 justify-content-between margin-auto fixed-top pet--add">
 
       <div class="col-8">
         <h2 class="fw-bolder ">My pets</h2>
@@ -16,12 +16,16 @@
       <div class="col-12">
 
         <% if @pets.empty? %>
-          <p>You don't have any pets registered!</p>
+          <div class="row pt-5 mt-5 justify-content-between margin-auto opacity-75">
+            <div class="col-12">
+              <p>You don't have any pets registered!</p>
+            </div>
+          </div>
         <% end %>
 
         <% @pets.each do |pet| %>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-center pt-3 mt-3">
             <div class="col-12 col-md-6 col-lg-4">
               <%= link_to pet_path(pet), style: "text-decoration:none;" do %>
                 <div class="pet--card mt-3" style="<%= pet.photo.attached? ? background_image(url: pet.photo.key, cloudinary: true) : background_image(cloudinary: false) %>">
