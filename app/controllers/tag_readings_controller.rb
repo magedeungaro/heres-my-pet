@@ -45,9 +45,9 @@ class TagReadingsController < ApplicationController
 
 
       UserChannel.broadcast_to(@pet.user, {
-        html: render_to_string(partial: "notifications/notification", locals: {notification: @notification}),
-        push_data: @notification.to_json,
-        path: "http://localhost:3000//#{@notification.notifiable_type.underscore}s/#{@notification.notifiable_id}"
+          html: render_to_string(partial: "notifications/notification", locals: {notification: @notification}),
+          push_data: @notification.to_json,
+          path: "https://www.heresmy.pet/#{@notification.notifiable_type.underscore}s/#{@notification.notifiable_id}"
         })
 
       NotificationChannel.broadcast_to(@pet.user, render_to_string(partial: "shared/notifications_navbar", locals: {counter: @pet.user.notifications.unread.length}))
