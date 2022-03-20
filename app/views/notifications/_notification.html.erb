@@ -5,7 +5,7 @@
     <div class="notifications--card mt-2 <%= "fw-bold bg-warning bg-opacity-25" unless notification.viewed %>">
 
       <div class="notifications--card__timestamp">
-        <%= notification.created_at.strftime("%a %b %e at %l:%M %p") %>
+        <%= formatted_date(notification.created_at) %>
       </div>
 
       <div class="notifications--card__settings">
