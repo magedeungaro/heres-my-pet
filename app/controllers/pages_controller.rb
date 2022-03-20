@@ -19,4 +19,7 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def hero
+  end
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'privacy-policy', to: 'pages#privacy_policy', as: :privacy_policy
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
+  get 'hero', to: 'pages#hero', as: :hero
 
   devise_for :users
 
