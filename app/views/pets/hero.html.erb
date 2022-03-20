@@ -1,1 +1,28 @@
-<h1>Hero page</h1>
+<main class="hero">
+  <div class="container margin-auto mt-5 row justify-content-center">
+    <section class="text-center mb-3 col-12">
+      <h2 class="fw-bold">You are a hero! <i class="fas fa-heart"></i></h2>
+    </section>
+    <div class="container col-12">
+      <img src="<%= asset_path('heroes.svg') %>" alt="You are a hero!">
+    </div>
+    <div class="col-12 col-md-6 col-lg-4">
+
+      <div class="flash flash-success flash--container">
+        <i class="fas fa-check text-success flash--icon"></i>
+        <div class="flash--content row justify-content-end w-100">
+          <div class="col-10">
+            <p><strong>Message sent!</strong></p>
+            <p><small>Thank you for helping <%= @pet.name.downcase.capitalize %> get back home!</small></p>
+            <p><small>We hope everything will be ok.</small></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <%= link_to 'Go to home', root_path, class: 'btn btn-tertiary text-primary mt-3' %>
+    </div>
+  </div>
+</main>
