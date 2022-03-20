@@ -4,7 +4,7 @@
        style="<%= @user.photo.attached? ? background_image(cloudinary: true, url: @user.photo.key): background_image %>">
 
     <% if current_user == @user %>
-      <div class="settings--bar py-4 light sticky-top">
+      <div class="settings--bar py-4 light fixed-top">
         <div class="settings--bar__container row justify-content-between">
             <div class="col-1">
               <%= link_to pets_path, class:"text-reset" do %>

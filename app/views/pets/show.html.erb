@@ -1,7 +1,7 @@
 <div class="persona--template">
   <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>">
     <% if @pet.user == current_user %>
-      <div class="settings--bar py-4 light sticky-top">
+      <div class="settings--bar py-4 light fixed-top">
         <div class="settings--bar__container row justify-content-between">
             <div class="col-1">
               <%= link_to pets_path, class:"text-reset" do %>
