@@ -16,6 +16,10 @@
   }
 }
 
+.persona--template__content img {
+  width: 100%;
+}
+
 @media screen and (min-width: 1024px) {
   .persona--template {
     &__image {
