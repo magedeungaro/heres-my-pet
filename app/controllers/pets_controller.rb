@@ -1,7 +1,8 @@
 class PetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
-  before_action :set_pet, only: [:show, :edit, :destroy, :update]
+  skip_before_action :authenticate_user!, only: [:show, :hero]
+  before_action :set_pet, only: [:show, :edit, :destroy, :update, :hero]
 
+  include PetsHelper
 
   def index
     @pets = policy_scope(Pet)
@@ -47,6 +48,11 @@ class PetsController < ApplicationController
     authorize @pet
     @pet.destroy
     redirect_to pets_path
+  end
+
+  def hero
+    authorize @pet
+    redirect_pet_owner @pet
   end
 
   private

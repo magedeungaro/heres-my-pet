@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'privacy-policy', to: 'pages#privacy_policy', as: :privacy_policy
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
-  get 'hero', to: 'pages#hero', as: :hero
 
   devise_for :users
 
@@ -16,6 +15,8 @@ Rails.application.routes.draw do
   resources :pets do
     resources :tag_readings, except: [:edit, :update, :destroy, :show]
   end
+
+  get 'pets/:id/hero', to: 'pets#hero', as: :hero
 
   resources :tag_readings, only: :show
 
