@@ -55,3 +55,8 @@
 .dropdown--icon .dropdown-toggle::after {
   content:none;
 }
+
+.dropdown--icon .dropdown-menu{
+  min-width: 75vw;
+  background-color: $hmp-light-gray;
+}
