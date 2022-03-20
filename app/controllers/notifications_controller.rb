@@ -7,7 +7,6 @@ class NotificationsController < ApplicationController
     @notifications = policy_scope(Notification).where(user_id: current_user.id).unread
     @notification.update_all(viewed: true)
     render :index
-
   end
 
   def notifications_counter

@@ -2,3 +2,35 @@
   margin: 0 auto;
   padding-top: 10vh;
 }
+
+.showcase {
+  img {
+    width: 80%;
+  }
+}
+
+.web {
+  header {
+    @include text-shadow;
+    background-size: cover;
+    background-position: top;
+  }
+}
+
+.standalone {
+  max-height: 100vh;
+  overflow: hidden;
+
+  main {
+    max-height: 30vh;
+    min-height: 30vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .web {
+    header {
+      background-position: center;
+    }
+  }
+}
