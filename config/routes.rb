@@ -24,5 +24,6 @@ Rails.application.routes.draw do
     get  :notifications_counter, on: :collection
     post :mark_as_read, on: :collection
     post :mark_as_read, on: :member
+    delete :destroy_all, on: :collection
   end
 end

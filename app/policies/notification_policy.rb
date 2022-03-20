@@ -21,4 +21,8 @@ class NotificationPolicy < ApplicationPolicy
   def notifications_counter?
     true
   end
+
+  def destroy_all?
+    true
+  end
 end

@@ -16,13 +16,19 @@ class NotificationsController < ApplicationController
         render json: @notifications
       }
     end
-
   end
 
   def destroy
     @notification = Notification.find(params[:id])
     authorize @notification
     @notification.destroy
+
+    redirect_to notifications_path
+  end
+
+  def destroy_all
+    @notifications = policy_scope(Notification).where(user_id: current_user.id)
+    @notifications.each(&:destroy)
 
     redirect_to notifications_path
   end
