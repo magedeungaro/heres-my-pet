@@ -1,6 +1,6 @@
 class NotificationsController < ApplicationController
   def index
-    @notifications = policy_scope(Notification).where(user_id: current_user.id)
+    @notifications = policy_scope(Notification).where(user_id: current_user.id).order(created_at: :desc)
   end
 
   def mark_as_read
