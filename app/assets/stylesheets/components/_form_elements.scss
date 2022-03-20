@@ -12,20 +12,19 @@
 }
 
 .form--message {
-  background-color: transparent;
+  background-color: transparent!important;
   border: none;
   resize: none;
   height: auto;
   width: 100%;
+  max-height: 20vh;
 }
 
 .form--message__wrapper{
   width: 300px;
-  margin: 50px auto;
   border-radius: 15px;
   background: $hmp-light-gray;
-  color: #fff;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: center;
   font-weight: 900;
   position: relative;
