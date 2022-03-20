@@ -23,7 +23,7 @@
   width: 300px;
   margin: 50px auto;
   border-radius: 15px;
-  background: #00bfb6;
+  background: $hmp-light-gray;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -36,8 +36,8 @@
     height: 0px;
     position: absolute;
     border-left: 15px solid transparent;
-    border-right: 15px solid #00bfb6;
-    border-top: 15px solid #00bfb6;
+    border-right: 15px solid $hmp-light-gray;
+    border-top: 15px solid $hmp-light-gray;
     border-bottom: 15px solid transparent;
     left: -16px;
     top: 0px;
