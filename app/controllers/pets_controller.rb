@@ -5,7 +5,7 @@ class PetsController < ApplicationController
   include PetsHelper
 
   def index
-    @pets = policy_scope(Pet)
+    @pets = policy_scope(Pet).where(user_id: current_user).order(name: :asc)
   end
 
   def show
