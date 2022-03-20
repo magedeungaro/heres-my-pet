@@ -33,4 +33,8 @@ class PetPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def hero?
+    true
+  end
 end

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :tag_readings, except: [:edit, :update, :destroy, :show]
   end
 
+  get 'pets/:id/hero', to: 'pets#hero', as: :hero
+
   resources :tag_readings, only: :show
 
   resources :notifications, only: [:index, :show, :destroy] do
