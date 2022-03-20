@@ -52,6 +52,7 @@ class PetsController < ApplicationController
 
   def hero
     authorize @pet
+    redirect_to root_path unless params[:message] == 'sent'
     redirect_pet_owner @pet
   end
 

@@ -54,7 +54,7 @@ class TagReadingsController < ApplicationController
 
       PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now
 
-      redirect_to hero_path
+      redirect_to hero_path(id: @pet, message: 'sent')
 
       return
     else
