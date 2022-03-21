@@ -48,6 +48,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.action_controller.asset_host = 'http://localhost:3000'
+  config.action_mailer.asset_host = config.action_controller.asset_host
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
