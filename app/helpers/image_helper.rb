@@ -2,6 +2,8 @@ module ImageHelper
   def background_image(args = {})
     url = asset_path('persona_photo.png')
 
+    url = asset_path('pet_profile.jpg') if args[:pet]
+
     url = args[:url] unless args[:url].nil?
 
     url = cl_image_path url if args[:cloudinary]
