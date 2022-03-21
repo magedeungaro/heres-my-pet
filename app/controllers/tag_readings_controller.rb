@@ -52,7 +52,7 @@ class TagReadingsController < ApplicationController
 
       NotificationChannel.broadcast_to(@pet.user, render_to_string(partial: "shared/notifications_navbar", locals: {counter: @pet.user.notifications.unread.length}))
 
-      PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now
+      PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email("twitter.png").deliver_now
 
       redirect_to hero_path(id: @pet, message: 'sent')
 
