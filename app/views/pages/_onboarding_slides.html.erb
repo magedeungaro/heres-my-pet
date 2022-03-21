@@ -1,0 +1,14 @@
+<div class="container row margin-auto">
+  <div class="carousel-wrapper text-center">
+    <h2 class="fw-bold"><%= title %></h2>
+    <p class="mt-3"><%= explanation %></p>
+    <%= image_tag(path) %>
+  </div>
+   <% unless last_slide %>
+    <button class="btn btn-primary" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <%= btn_label %>
+    </button>
+   <% end %>
+
+  <%= link_to link_title, pets_path(onboarded: last_slide), class:"btn #{btn_class}" %>
+</div>
