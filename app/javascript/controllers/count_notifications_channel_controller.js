@@ -10,7 +10,6 @@ export default class extends Controller {
     this.channel = consumer.subscriptions.create(
       { channel: "NotificationChannel", id: this.userIdValue },
       { received: data => this.counterTarget.innerHTML = data }
-
       )
     console.log( this.counterTarget);
 
