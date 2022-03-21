@@ -1,6 +1,6 @@
 class Pet < ApplicationRecord
   belongs_to :user
-  has_many :tag_readings
+  has_many :tag_readings, dependent: :destroy
   has_one_attached :photo
 
   validates :name, presence: true

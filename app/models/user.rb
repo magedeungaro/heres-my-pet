@@ -4,12 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :pets
-  has_many :notifications
+  has_many :pets, dependent: :destroy
+  has_many :notifications, dependent: :destroy
+  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birthdate, presence: true
   validates :nickname, uniqueness: true, allow_blank: true
-  has_one_attached :photo
 end

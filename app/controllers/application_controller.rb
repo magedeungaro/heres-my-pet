@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  after_action :verify_authorized, except: [:index, :mark_as_read, :notifications_counter, :destroy_all], unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: [:index, :mark_as_read, :notifications_counter, :destroy_all], unless: :skip_pundit?
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
