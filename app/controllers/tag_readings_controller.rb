@@ -50,6 +50,9 @@ class TagReadingsController < ApplicationController
           path: "https://www.heresmy.pet/#{@notification.notifiable_type.underscore}s/#{@notification.notifiable_id}"
         })
 
+      PushChannel.broadcast_to(@pet.user, {push_data: @notification.to_json,
+      path: "https://www.heresmy.pet/#{@notification.notifiable_type.underscore}s/#{@notification.notifiable_id}"})
+
       NotificationChannel.broadcast_to(@pet.user, render_to_string(partial: "shared/notifications_navbar", locals: {counter: @pet.user.notifications.unread.length}))
 
       PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now
