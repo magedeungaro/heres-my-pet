@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "?from=app",
+  "start_url": "/",
   "background_color": "#045A7C",
   "display": "standalone",
   "scope": "/",

@@ -1,18 +1,80 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<style>
+</style>
 </head>
-<body>
-  <div class = "container w-80">
-    <div class = "row">
-    <p> Hi <%= @pet.user.first_name %> </p>
-      <h2> Somebody may have found <%= @pet.name %>! </h2>
-      <p> <%= @tag_reading.created_at.strftime("%m/%d/%Y at %I:%M%p") %> </p>
-        <textarea disabled class="form--message", rows="5" cols="40", style="font-size:25px"><%= @tag_reading.message %> </textarea>
-    </div>
-  </div>
+
+<body style="margin: 0; padding: 0;">
+  <table bordercolor="#ff00ff" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+
+    <tr>
+    <td bgcolor="#045A7C" style="padding: 40px 30px 40px 30px; color: #ffffff">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+     <tr>
+      <td>
+        <h3> Hi <%= @pet.user.first_name %>, </h3>
+      </td>
+     </tr>
+     <tr>
+      <td>
+        <h2> <b>Somebody may have found <%= @pet.name %>! </b></h2>
+        <a href="<%= URI.join(root_url, tag_reading_url(pet_id: @pet.id, id: @tag_reading.id).to_s) %>"style="font-weight: 800;
+                                                                                                        font-family: 'Open Sans',
+                                                                                                          Arial, Helvetica,
+                                                                                                          sans-serif;
+                                                                                                        border-radius: 3px;
+                                                                                                        color: #ffffff;
+                                                                                                        display: inline-block;
+                                                                                                        font-size: 16px;
+                                                                                                        background-color: #f26f39;
+                                                                                                        line-height: 20px;
+                                                                                                        padding: 15px 0px 15px 0px;
+                                                                                                        text-align: center;
+                                                                                                        text-decoration: none;
+                                                                                                        width: 560px;">See details</a>
+      </td>
+     </tr>
+     <br>
+     <tr>
+      <td>
+        <p style = "font-size:12px"> Message preview : </p>
+        <textarea cols="50" rows="5" style="border:dashed 2px white; background-color:#045A7C; color:#ffffff; font-size:15px; padding: 15px 15px 15px 15px;"> <%= @tag_reading.message %> </textarea>
+      </td>
+     </tr>
+    </table>
+   </td>
+    </tr>
+    <tr>
+      <td bgcolor="#F43471" style="padding: 30px 15px 30px 15px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+        <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 18px;">
+          &reg; <a href="" style="
+                                  color: #ffffff;
+                                  text-decoration: underline;">
+        <span style="color: #ffffff">Heres My Pet</span>
+      </a>
+          <p style="color: #ffffff; font-family: Arial, sans-serif; font-size: 18px;">Protect your pet without spending too much</p>
+        </td>
+
+        <td align="right">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr>
+          <td>
+            <a href="http://www.twitter.com/heresmy_pet">
+            <%= image_tag(attachments['twitter.png'].url, width: "38", height: "38", style: "display: block;", border: "0")%>
+            </a>
+          </td>
+          <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+
+          </tr>
+        </table>
+
+        </tr>
+      </table>
+    </td>
+    </tr>
+  </table>
 </body>
 </html>

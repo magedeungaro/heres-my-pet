@@ -1,5 +1,5 @@
 <div class="persona--template">
-  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>">
+  <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key, cloudinary: true) : background_image(cloudinary: false, pet: true) %>">
     <% if @pet.user == current_user %>
       <div class="settings--bar py-4 light fixed-top">
         <div class="settings--bar__container row justify-content-between">

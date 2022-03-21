@@ -30,6 +30,8 @@ gem 'devise'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'autoprefixer-rails'
 # gem 'font-awesome-sass', '~> 5.6.1'
+gem 'premailer-rails'
+
 gem 'bullet'
 
 # Reduces boot times through caching; required in config/boot.rb
