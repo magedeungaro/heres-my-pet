@@ -1,30 +1,61 @@
-<main>
+<main class="pt-5">
   <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-wrap="false" data-bs-interval="false">
+      <div class="carousel-indicators opacity-0">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="...">
+          <%= render 'onboarding_slides', path: 'congratulations.svg',
+                                          title: 'CONGRATULATIONS!',
+                                          explanation: "Welcome to Here's My Pet, #{current_user.first_name.downcase.capitalize}!",
+                                          btn_class: 'btn-tertiary',
+                                          last_slide: false,
+                                          link_title: 'Skip',
+                                          btn_label: 'See how it works' %>
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
+          <%= render 'onboarding_slides', path: 'pet_profile.svg',
+                                          title: 'CREATE A PET PROFILE',
+                                          explanation: 'Set up a nice photo of your best friend and all the relevant information',
+                                          btn_class: 'btn-tertiary',
+                                          last_slide: false,
+                                          link_title: 'Skip',
+                                          btn_label: 'Next' %>
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
+          <%= render 'onboarding_slides', path: 'leash_tag.svg', title: 'SET A TAG',
+                                          explanation: "Print your pet's QR code and stick it on your pet's leash",
+                                          btn_class: 'btn-tertiary',
+                                          last_slide: false,
+                                          link_title: 'Skip',
+                                          btn_label: 'Next' %>
+        </div>
+        <div class="carousel-item">
+          <%= render 'onboarding_slides', path: 'pet_location.svg', title: 'YOUR PET IDENTIFIED',
+                                          explanation: "Scanning your pet's code shows their profile",
+                                          btn_class: 'btn-tertiary',
+                                          last_slide: false,
+                                          link_title: 'Skip',
+                                          btn_label: 'Next' %>
+        </div>
+        <div class="carousel-item">
+          <%= render 'onboarding_slides', path: 'pet_found.svg', title: 'FIND YOUR PET LOCATION',
+                                          explanation: "The person who found your pet can send you your pet's location and a message",
+                                          btn_class: 'btn-primary',
+                                          last_slide: true,
+                                          link_title: 'Go to dashboard' %>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+
+
+
+
+
     </div>
   </div>
 </main>
