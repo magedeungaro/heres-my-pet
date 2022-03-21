@@ -10,5 +10,5 @@
     </button>
    <% end %>
 
-  <%= link_to link_title, pets_path, class:"btn #{btn_class}", 'data-carousel-target':  "dashboardBtn" %>
+  <%= link_to link_title, pets_path(onboarded: last_slide), class:"btn #{btn_class}" %>
 </div>
