@@ -1,10 +1,15 @@
 <main>
-  <div class="container w-80">
-    <h2 class="fw-bold pb-5">Help this pet</h2>
+  <div class="container pt-5">
+    <h2 class="fw-bold pb-5">Help this pet get back home!</h2>
+
+    <%= render 'shared/info_modal', title:'consent', content:'Sending this message and/or the location means you explicitly consent to share this info', classes: 'mt-3' %>
+
       <div class="row">
         <div class="col-12">
           <%= simple_form_for [@pet, @tag_reading], remote: true do |f| %>
+
             <%= f.input :message %>
+
             <div data-controller="geolocation">
               <%= f.input :user_consent, as: :boolean, label: "Share Location?", input_html: { data: { target: "checkbox",
                                                                                  action: "change->geolocation#shareLocation" }}%>
@@ -13,10 +18,12 @@
                 <%= f.input :lng, input_html: { data:  { "geolocation-target": "lng"}} %>
               </div>
             </div>
+
+
             <div class="text-center">
               <div class="btn-group-vertical">
-                <%= f.button :submit, 'Help this pet', class: "btn btn-primary btn-md btn-block"%>
-                <%= link_to "cancel", pets_path(@pet), class: "btn btn-link btn-sm btn-block" %>
+                <%= f.button :submit, 'Help this pet', class: "btn btn-primary btn-md btn-block mt-3"%>
+                <%= link_to "cancel", root_path, class: "btn btn-link btn-sm btn-block mt-3", data: {confirm: 'Are you sure? You can help save a life just by sending your location.'} %>
               </div>
             </div>
           <% end %>

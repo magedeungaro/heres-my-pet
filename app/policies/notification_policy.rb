@@ -13,4 +13,16 @@ class NotificationPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def mark_as_read?
+    true
+  end
+
+  def notifications_counter?
+    true
+  end
+
+  def destroy_all?
+    true
+  end
 end

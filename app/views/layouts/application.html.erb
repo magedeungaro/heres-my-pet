@@ -36,7 +36,9 @@
     <div class="page--container">
 
       <%= yield %>
-
+      <% if current_user %>
+       <%= render 'shared/push'%>
+      <% end %>
       <%= render_navbar %>
       <%= render 'shared/flashes' %>
     </div>

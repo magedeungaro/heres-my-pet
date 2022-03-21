@@ -1,7 +1,7 @@
 <div class="persona--template">
   <div class="persona--template__image" style="<%= @pet.photo.attached? ? background_image(cloudinary: true, url: @pet.photo.key): background_image %>">
     <% if @pet.user == current_user %>
-      <div class="settings--bar py-4 light sticky-top">
+      <div class="settings--bar py-4 light fixed-top">
         <div class="settings--bar__container row justify-content-between">
             <div class="col-1">
               <%= link_to pets_path, class:"text-reset" do %>
@@ -13,24 +13,28 @@
                 <i class="fas fa-ellipsis-v avatar dropdown-toggle" id="changeThisId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </i>
 
-                <div class="dropdown-menu dropdown-menu-end py-3" aria-labelledby="changeThisId">
-                  <p>
-                    <%= link_to edit_pet_path(@pet), class: 'text-reset mx-2 text-decoration-none' do %>
-                      <i class="fas fa-edit"></i> Edit pet
-                    <% end %>
-                  </p>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="changeThisId">
+                  <div class="container">
 
-                  <p>
-                    <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-reset mx-2 text-decoration-none' do %>
-                      <i class="fas fa-trash-alt"></i> Delete pet
-                    <% end %>
-                  </p>
+                    <p class="py-2">
+                      <%= link_to pet_tag_readings_path(@pet), class: 'text-primary mx-2 text-decoration-none' do %>
+                        <i class="fas fa-map-marker-alt"></i> Location history
+                      <% end %>
+                    </p>
 
-                  <p>
-                    <%= link_to pet_tag_readings_path(@pet), class: 'text-reset mx-2 text-decoration-none' do %>
-                      <i class="fas fa-map-marker-alt"></i> Location history
-                    <% end %>
-                  </p>
+                    <p class="py-2">
+                      <%= link_to edit_pet_path(@pet), class: 'text-primary mx-2 text-decoration-none' do %>
+                        <i class="fas fa-edit"></i> Edit pet
+                      <% end %>
+                    </p>
+
+                    <p class="py-2">
+                      <%= link_to pet_path(@pet), method: :delete, data: {confirm: 'Are you sure?'}, class: 'text-danger mx-2 text-decoration-none' do %>
+                        <i class="fas fa-trash-alt"></i> Delete pet
+                      <% end %>
+                    </p>
+
+                  </div>
                 </div>
 
               </div>
@@ -42,40 +46,18 @@
 
   <div class="persona--template__content py-5">
     <div class="container w-80">
-      <h2 class="fw-bold py-3"><%= @pet.name %></h2>
-
-      <div class="row">
+     <div class="row">
         <div class="col-6 col-md-4 col-lg-3">
-           <div class="info--group py-3">
-            <p class="info--group__label fw-bold">Type</p>
-            <p class="info--group__content"><%= @pet.pet_type %></p>
-          </div>
+          <h2 class="fw-bold py-3"><%= @pet.name %></h2>
         </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="info--group py-3">
-            <p class="info--group__label fw-bold">Gender</p>
-            <p class="info--group__content"><%= @pet.gender %></p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
-          <div class="info--group py-3">
-            <p class="info--group__label fw-bold">Birthdate</p>
-            <p class="info--group__content"><%= @pet.birthdate.strftime("%m/%d/%Y")%></p>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3 text-end">
           <div class="info--group py-3">
             <p class="info--group__label fw-bold">Spayed?</p>
             <p class="info--group__content"><%= @pet.spayed ? 'Yes' : 'No' %></p>
           </div>
         </div>
-        <div class="col-12">
-          <div class="info--group py-3">
-            <p class="info--group__label fw-bold">Additional Info</p>
-            <p class="info--group__content"><%= @pet.additional_info %></p>
-          </div>
-        </div>
       </div>
+
 
       <% if current_user == @pet.user %>
         <div class="row justify-content-center py-3">
@@ -94,6 +76,34 @@
           <%= link_to 'I want to help!', new_pet_tag_reading_path(pet_id: @pet.id), class: 'btn btn-primary mt-3' %>
         </div>
       <%end%>
+
+      <div class="row pt-4">
+        <h3><%= @pet.name  %>'s information</h3>
+        <div class="col-6 col-md-4 col-lg-3">
+           <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Type</p>
+            <p class="info--group__content"><%= @pet.pet_type %></p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Gender</p>
+            <p class="info--group__content"><%= @pet.gender %></p>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Birthdate</p>
+            <p class="info--group__content"><%= @pet.birthdate.strftime("%m/%d/%Y")%></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="info--group py-3">
+            <p class="info--group__label fw-bold">Additional Info</p>
+            <p class="info--group__content"><%= @pet.additional_info %></p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

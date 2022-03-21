@@ -1,0 +1,44 @@
+.info--group {
+  p {margin: 0}
+
+  &__label {
+    color: $hmp-md-gray;
+    font-size: .8rem;
+  }
+
+  &__content {
+    color: $body-color;
+  }
+}
+
+.form--message {
+  background-color: transparent!important;
+  border: none;
+  resize: none;
+  height: auto;
+  width: 100%;
+  max-height: 20vh;
+}
+
+.form--message__wrapper{
+  width: 300px;
+  border-radius: 15px;
+  background: $hmp-light-gray;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: 900;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid $hmp-light-gray;
+    border-top: 15px solid $hmp-light-gray;
+    border-bottom: 15px solid transparent;
+    left: -16px;
+    top: 0px;
+  }
+}

@@ -1,9 +1,29 @@
-<main class="py-5 mb-5">
+<main class="py-5 mb-5 pet--main">
   <div class="container mb-5">
+   <div class="row pt-4 pb-3 justify-content-between margin-auto fixed-top pet--add">
+
+      <div class="col-8">
+        <h2 class="fw-bolder ">My pets</h2>
+      </div>
+
+      <div class="col-4 text-end">
+        <%= link_to new_pet_path, class:'btn btn-primary btn-sm' do%>
+          <i class="fas fa-plus-circle"></i>
+        <% end %>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-12">
-        <h2 class="fw-bold p-3"> My pets </h2>
-        <% current_user.pets.each do |pet| %>
+      <div class="col-12 pt-3 mt-3">
+
+        <% if @pets.empty? %>
+          <div class="row pt-5 mt-5 justify-content-between margin-auto opacity-75">
+            <div class="col-12">
+              <p>You don't have any pets registered!</p>
+            </div>
+          </div>
+        <% end %>
+
+        <% @pets.each do |pet| %>
 
           <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-4">
@@ -19,18 +39,7 @@
           </div>
 
         <% end %>
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-6 col-lg-4">
-            <%= link_to new_pet_path, class:"text-decoration-none" do %>
-              <div class="pet--card bg-primary pet--add mt-3">
-                <div class="pet--card__content py-3 px-4">
-                  <i class="fas fa-plus-circle"></i>
-                  Add new pet
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
+
      </div>
 
     </div>

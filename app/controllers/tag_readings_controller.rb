@@ -1,6 +1,8 @@
 class TagReadingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
 
+  include PetsHelper
+
   def index
     @pet = Pet.find(params[:pet_id])
     @tag_readings = policy_scope(TagReading).where(pet_id: @pet).order(created_at: :DESC).limit(10)
@@ -21,6 +23,8 @@ class TagReadingsController < ApplicationController
 
   def new
     @pet = Pet.find(params[:pet_id])
+    redirect_pet_owner @pet
+
     @tag_reading = TagReading.new
     authorize @tag_reading
 
@@ -37,11 +41,23 @@ class TagReadingsController < ApplicationController
       @notification.content = "Somebody may have found #{@pet.name}!"
       @notification.user = @pet.user
       @notification.save
-      UserChannel.broadcast_to(@pet.user, render_to_string(partial: "notifications/notification", locals: {notification: @notification}))
+
+
+
+      UserChannel.broadcast_to(@pet.user, {
+          html: render_to_string(partial: "notifications/notification", locals: {notification: @notification}),
+          push_data: @notification.to_json,
+          path: "https://www.heresmy.pet/#{@notification.notifiable_type.underscore}s/#{@notification.notifiable_id}"
+        })
+
+      PushChannel.broadcast_to(@pet.user, {push_data: @notification.to_json,
+      path: "https://www.heresmy.pet/#{@notification.notifiable_type.underscore}s/#{@notification.notifiable_id}"})
+
+      NotificationChannel.broadcast_to(@pet.user, render_to_string(partial: "shared/notifications_navbar", locals: {counter: @pet.user.notifications.unread.length}))
 
       PetNotificationMailer.with(tag_reading: @tag_reading).pet_location_email.deliver_now
 
-      redirect_to root_path  # heroes page
+      redirect_to hero_path(id: @pet, message: 'sent')
 
       return
     else
