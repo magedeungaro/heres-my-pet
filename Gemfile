@@ -30,7 +30,7 @@ gem 'devise'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'autoprefixer-rails'
 # gem 'font-awesome-sass', '~> 5.6.1'
-
+gem 'bullet'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -39,7 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
-
+gem 'rspec-rails', '~> 4.0.0'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
