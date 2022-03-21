@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  include Pundit
+  include Pundit::Authorization
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: [:index, :mark_as_read, :notifications_counter, :destroy_all], unless: :skip_pundit?
