@@ -1,49 +1,50 @@
-<% background_img = 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80' %>
-
-<header style="<%= background_image(url: background_img, cloudinary: false) %>">
-  <div class="container pb-5">
-    <div class="logo--image py-3 row justify-content-between">
-      <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4 col-md-6 col-lg-1" alt="">
-      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-tertiary text-white col-4 col-md-6 col-lg-1' %>
+<header class="banner" style="background-color: #045A7C;">
+  <div class="container pb-3">
+    <div class="logo--image py-2 row justify-content-between">
+      <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4 col-md-6 col-lg-1 logo-size" alt="">
+      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-tertiary h-1 text-white col-4 col-md-3 col-lg-1' %>
     </div>
 
-    <div class="header--content py-5 my-5 text-white text-center">
-      <h2 class="fw-bold"><strong>Losing a pet is heartbreaking</strong></h2>
+    <div class="header--content py-2 my-3 text-white text-center">
+      <h2 class="fw-bold"><strong>We help you protect your pet</strong></h2>
 
-      <p class="pt-3">HMP is here to empower you so your pet have more chances to come back home</p>
+      <p class="pt-2">HMP offers a free solution to help all pet owners find their loved companions <br> Join us today!</p>
 
-      <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-warning fw-bold mt-5' %>
+      <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-danger text-white' %>
     </div>
   </div>
 </header>
+<main>
+  <div class="container mt-5">
+    <div class="row justify-content-between m-1 p-2">
+      <div class="col-2 p-3 mx-1 my-2 landing-card">
+      <%= render 'landing_cards', path: 'pet_profile.svg',
+                                                title: 'CREATE A PET PROFILE',
+                                                explanation: 'Set up a nice photo of your best friend and all the relevant information' %>
 
-<section class="showcase py-3">
-  <div class="container">
-    <h2 class="fw-bold py-3"><strong>How does it work?</strong></h2>
-
-    <div class="row justify-content-around pt-3">
-      <div class="col-12 col-6 col-lg-7">
-        <p>1. Register your pet</p>
-        <p>2. Use the generated QR Code <strong>wherever you want!</strong></p>
-        <div class="opacity-75">
-          <p> - Got a bluetooth tag? Stick it on it! A key id tag? Put it on it!</p>
-          <p> - Put your pet QR code in <strong>any custom tag</strong> you have.</p>
-        </div>
-        <p>3. Pet ran away? When somebody finds your pet and <strong>scans the QR code</strong>, they can send you a location and a message.</p>
-        <p>4. Optional: You can share your info to be displayed when somebody scans the QR code.</p>
       </div>
-
-      <div class="col-6 col-lg-2 text-center">
-        <%= image_tag('pet_profile_page.png')  %>
+      <div class="col-2 p-3 mx-2 my-2 landing-card">
+      <%= render 'landing_cards', path: 'leash_tag.svg', title: "SET YOUR PET'S TAG ",
+                                                explanation: "Print your pet's QR code and stick it on your pet's leash"%>
       </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-6 text-center">
-        <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-warning fw-bold mt-5' %>
+      <div class="col-2 p-3 mx-1 my-2 landing-card">
+      <%= render 'landing_cards', path: 'pet_location.svg', title: 'YOUR PET IDENTIFIED',
+                                                explanation: "Scanning your pet's code shows their profile"%>
+      </div>
+      <div class="col-2 p-3 mx-1 my-2 landing-card">
+      <%= render 'landing_cards', path: 'pet_found.svg', title: 'FIND YOUR PET 💕 ',
+                                                explanation: "The person who found your pet can send you your pet's location and a message"%>
       </div>
     </div>
   </div>
-</section>
-
-<%= render 'shared/footer' %>
+</main>
+<footer class="px-3 py-3 mt-3">
+  <%# <div class="container w-80 h-30">
+    <p data-controller="footer">
+      Coded by %>
+      <%# <span data-footer-target='github'></span> %>
+      <%# <a href="https://www.lewagon.com/" class="text-white">@ Le Wagon</a> %>
+    <%# </p>
+  </div> %>
+  <%= render 'shared/footer' %>
+</footer>

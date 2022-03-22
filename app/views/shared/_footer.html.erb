@@ -1,22 +1,27 @@
-<footer class="px-3 py-5 mt-3 bg-dark text-white">
-  <div class="container row justify-content-around">
-    <div class="col-12 col-md-3 mb-4">
+
+  <div class="container row justify-content-around mt-2">
+    <div class="col-3 col-md-3 mb-4">
       <small>
         &copy; Here's My Pet • 2022 - <%= Time.now.year %>
       </small>
+      <small class="mt-2" data-controller="footer">
+      Coded by
+      <span data-footer-target='github'></span>
+      </small>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-3">
+    </div>
+    <div class="col-3 col-md-3">
       <p>
         <%= link_to "Privacy Policy", privacy_policy_path, class:"text-reset" %>
       </p>
-      <p>
-        <%= link_to "About us", about_path, class: "text-reset" %>
-      </p>
     </div>
-    <div class="col-12 col-md-3">
+    <div class="col-3 col-md-3">
+      <p>
+        <%= link_to "About", about_path, class: "text-reset" %>
+      </p>
       <p>
         <%= link_to "Contact us", contact_path, class: "text-reset" %>
       </p>
     </div>
   </div>
-</footer>

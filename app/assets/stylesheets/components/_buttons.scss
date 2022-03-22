@@ -25,3 +25,21 @@
   @include d-flex-align(end);
   height: 75px;
 }
+
+.btn-banner {
+  background-color: #F43471;
+  color: #FFFF;
+  font-weight:bolder;
+  border-radius: 10px;
+}
+
+.btn-login {
+  color: #FFFF;
+  background-color: #FD8B10;
+  border-color: transparent;
+  height: 35px;
+
+  &:hover {
+    background-color: #ffc107;
+  }
+}
