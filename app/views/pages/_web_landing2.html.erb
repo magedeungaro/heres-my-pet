@@ -2,7 +2,7 @@
   <div class="container pb-3">
     <div class="logo--image py-2 row justify-content-between">
       <img src="<%= asset_path('heresmypet_logo_inverted.svg') %>" class="col-4 col-md-6 col-lg-1 logo-size" alt="">
-      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-login text-white col-4 col-md-3 col-lg-1' %>
+      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-tertiary h-1 text-white col-4 col-md-3 col-lg-1' %>
     </div>
 
     <div class="header--content py-2 my-3 text-white text-center">
@@ -10,7 +10,7 @@
 
       <p class="pt-2">HMP offers a free solution to help all pet owners find their loved companions <br> Join us today!</p>
 
-      <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-banner' %>
+      <%= link_to 'Start for free', new_user_registration_path, class: 'btn btn-danger text-white' %>
     </div>
   </div>
 </header>
@@ -38,12 +38,13 @@
     </div>
   </div>
 </main>
-<footer class="p-3 text-white">
-  <div class="container w-80 h-30">
+<footer class="px-3 py-5 mt-3">
+  <%# <div class="container w-80 h-30">
     <p data-controller="footer">
-      Coded by
-      <span data-footer-target='github'></span>
+      Coded by %>
+      <%# <span data-footer-target='github'></span> %>
       <%# <a href="https://www.lewagon.com/" class="text-white">@ Le Wagon</a> %>
-    </p>
-  </div>
+    <%# </p>
+  </div> %>
+  <%= render 'shared/footer' %>
 </footer>
