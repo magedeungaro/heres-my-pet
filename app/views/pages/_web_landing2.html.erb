@@ -14,26 +14,36 @@
     </div>
   </div>
 </header>
+<main>
+  <div class="container mt-5">
+    <div class="row justify-content-between m-1 p-2">
+      <div class="col-2 p-3 mx-1 my-2 landing-card">
+      <%= render 'landing_cards', path: 'pet_profile.svg',
+                                                title: 'CREATE A PET PROFILE',
+                                                explanation: 'Set up a nice photo of your best friend and all the relevant information' %>
 
-<div class="container mt-5">
-  <div class="row justify-content-between m-1 p-2">
-  <div class="col-2 p-3 mx-1 my-2 landing-card">
-  <%= render 'landing_cards', path: 'pet_profile.svg',
-                                            title: 'CREATE A PET PROFILE',
-                                            explanation: 'Set up a nice photo of your best friend and all the relevant information' %>
-
+      </div>
+      <div class="col-2 p-3 mx-2 my-2 landing-card">
+      <%= render 'landing_cards', path: 'leash_tag.svg', title: 'SET A TAG ON YOUR PET',
+                                                explanation: "Print your pet's QR code and stick it on your pet's leash"%>
+      </div>
+      <div class="col-2 p-3 mx-1 my-2 landing-card">
+      <%= render 'landing_cards', path: 'pet_location.svg', title: 'YOUR PET IDENTIFIED',
+                                                explanation: "Scanning your pet's code shows their profile"%>
+      </div>
+      <div class="col-2 p-3 mx-1 my-2 landing-card">
+      <%= render 'landing_cards', path: 'pet_found.svg', title: 'FIND YOUR PET LOCATION',
+                                                explanation: "The person who found your pet can send you your pet's location and a message"%>
+      </div>
+    </div>
   </div>
-  <div class="col-2 p-3 mx-2 my-2 landing-card">
-  <%= render 'landing_cards', path: 'leash_tag.svg', title: 'SET A TAG',
-                                            explanation: "Print your pet's QR code and stick it on your pet's leash"%>
+</main>
+<footer class="p-3 text-white">
+  <div class="container w-80 h-30">
+    <p data-controller="footer">
+      Coded by
+      <span data-footer-target='github'></span>
+      <%# <a href="https://www.lewagon.com/" class="text-white">@ Le Wagon</a> %>
+    </p>
   </div>
-  <div class="col-2 p-3 mx-1 my-2 landing-card">
-  <%= render 'landing_cards', path: 'pet_location.svg', title: 'YOUR PET IDENTIFIED',
-                                            explanation: "Scanning your pet's code shows their profile"%>
-  </div>
-  <div class="col-2 p-3 mx-1 my-2 landing-card">
-  <%= render 'landing_cards', path: 'pet_found.svg', title: 'FIND YOUR PET LOCATION',
-                                            explanation: "The person who found your pet can send you your pet's location and a message"%>
-  </div>
-  </div>
-</div>
+</footer>
