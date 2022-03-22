@@ -1,6 +1,6 @@
 footer {
   img {
-    width: 70px;
+    width: 35px;
     border-radius: 50%;
     outline: 1px transparent solid;
     transition: .5s;
@@ -10,6 +10,9 @@ footer {
     }
   }
 
+  a{
+    text-decoration:none;
+  }
   p {
     text-align: end;
   }

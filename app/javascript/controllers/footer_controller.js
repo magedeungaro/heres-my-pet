@@ -29,6 +29,6 @@ export default class extends Controller {
   }
 
   htmlTemplate(user){
-    return `<a href='${user.html_url}'><img src='${user.avatar_url}' alt='${user.login}' class='round-circle mx-3'></a>`
+    return `<a href='${user.html_url}'><img src='${user.avatar_url}' alt='${user.login}' class='round-circle mx-1'></a>`
   }
 }
