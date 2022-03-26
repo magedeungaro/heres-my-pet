@@ -60,3 +60,24 @@
   min-width: 75vw;
   background-color: $hmp-light-gray;
 }
+
+.notification--icon {
+  position: relative;
+
+  &__counter {
+    $counter_dimensions: 15px;
+    color: white;
+    font-family: $body-font;
+    font-size: .5rem;
+    background-color: $danger;
+    border-radius: 50%;
+    position: absolute;
+    top: -35%;
+    left: 55%;
+    width: $counter_dimensions;
+    height: $counter_dimensions;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
