@@ -1,1 +1,5 @@
- <i class="fas fa-bell"><%= counter %></i>
+ <i class="fas fa-bell notification--icon">
+  <% unless counter.zero? %>
+    <span class="notification--icon__counter"><%= counter %></span>
+  <% end %>
+ </i>
