@@ -1,11 +1,12 @@
 require 'rest-client'
+require 'json'
 
 class ApiCallerService
   def self.fetch(verb: :get, url:, body: nil, headers: nil, **rest)
-    begin
-      RestClient::Request.new(method: verb, url: url, body: body, headers: headers).execute
-    rescue StandardError => e
-      puts e
-    end
+    RestClient::Request.new(method: verb, url: url, body: body, headers: headers).execute.body
+
+    rescue RestClient::ExceptionWithResponse => e
+      body = JSON.parse(e.response.body)
+      {code: e.response.code, message: body['message']}
   end
 end
