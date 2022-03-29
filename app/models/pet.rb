@@ -6,4 +6,11 @@ class Pet < ApplicationRecord
   validates :name, presence: true
   validates :gender, presence: true
   validates :pet_type, presence: true
+
+  private
+
+  def method_name
+
+  end
+
 end
