@@ -5,7 +5,7 @@ class PetsController < ApplicationController
   include PetsHelper
 
   def index
-    current_user.update(onboarded: true) if params[:onboarded] == true
+    current_user.update(onboarded: true) if params[:onboarded] == 'true'
 
     @pets = policy_scope(Pet).where(user_id: current_user).order(name: :asc).with_attached_photo
   end
