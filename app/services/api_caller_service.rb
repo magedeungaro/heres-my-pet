@@ -7,6 +7,7 @@ class ApiCallerService
 
     rescue RestClient::ExceptionWithResponse => e
       body = JSON.parse(e.response.body)
-      {code: e.response.code, message: body['message']}
+      Sentry.capture_exception(e)
+      { code: e.response.code, message: body['message'] }
   end
 end
