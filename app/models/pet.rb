@@ -4,6 +4,11 @@ class Pet < ApplicationRecord
   has_one_attached :photo
   has_one_attached :qr_code
 
+  scope :without_qr, -> do
+    Pet.left_joins(:qr_code_attachment).where(active_storage_attachments: { id: nil })
+  end
+
+
   validates :name, presence: true
   validates :gender, presence: true
   validates :pet_type, presence: true
