@@ -7,4 +7,15 @@ class Pet < ApplicationRecord
   validates :name, presence: true
   validates :gender, presence: true
   validates :pet_type, presence: true
+
+  def attach_qr(request_path)
+    file = build_qr(request_path)
+    FileService.attach_file(file: file, file_name: self.id, obj: self, attachable_type: 'qr_code')
+  end
+
+  private
+
+  def build_qr(request_path)
+    Apis::QRCode::GoQR::Interface.generate_qrcode(text: request_path)
+  end
 end
