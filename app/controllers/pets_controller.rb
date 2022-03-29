@@ -5,7 +5,7 @@ class PetsController < ApplicationController
   include PetsHelper
 
   def index
-    @pets = policy_scope(Pet).where(user_id: current_user).order(name: :asc).includes([:photo_attachment])
+    @pets = policy_scope(Pet).where(user_id: current_user).order(name: :asc).with_attached_photo
   end
 
   def show
