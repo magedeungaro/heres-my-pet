@@ -9,6 +9,8 @@ class PetsController < ApplicationController
   end
 
   def show
+    Sentry.capture_exception(StandardError.new('pet without qr code')) unless @pet.qr_code.attached?
+
     authorize @pet
     @reading = true if params[:qrcode]
   end
@@ -23,8 +25,11 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @user = current_user
     @pet.user = @user
+
     authorize @pet
+
     if @pet.save
+      @pet.attach_qr(request.path)
       redirect_to pet_path(@pet)
     else
       render :new
