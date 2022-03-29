@@ -9,6 +9,8 @@ class PetsController < ApplicationController
   end
 
   def show
+    Sentry.capture_exception(StandardError.new('pet without qr code')) unless @pet.qr_code.attached?
+
     authorize @pet
     @reading = true if params[:qrcode]
   end

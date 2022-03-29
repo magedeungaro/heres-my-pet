@@ -65,7 +65,7 @@
             <% if @pet.qr_code.attached? %>
               <%= cl_image_tag @pet.qr_code.key %>
             <% else %>
-              <h2>Needs a qr code</h2>
+              <%= render 'shared/static_flashes', alert: 'This pet needs a qr code' %>
             <% end %>
           </div>
         </div>
