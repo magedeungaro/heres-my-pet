@@ -4,8 +4,6 @@ class FileService
   end
 
   def self.create_blob(file:, file_name:, file_extension: 'png')
-    byebug
-
     ActiveStorage::Blob.create_after_upload!(
       io: File.open(file),
       filename: file_name,
