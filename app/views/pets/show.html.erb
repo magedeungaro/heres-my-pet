@@ -62,7 +62,11 @@
       <% if current_user == @pet.user %>
         <div class="row justify-content-center py-3">
           <div class="col-6">
-            <img src="<%= qr_code_url(request.path) %>" alt="">
+            <% if @pet.qr_code.attached? %>
+              <%= cl_image_tag @pet.qr_code.key %>
+            <% else %>
+              <h2>Needs a qr code</h2>
+            <% end %>
           </div>
         </div>
       <% elsif @reading %>
