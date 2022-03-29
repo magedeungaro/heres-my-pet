@@ -16,7 +16,13 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    pets_path(current_user) # your path
+    return onboarding_path unless current_user.onboarded
+
+    pets_path # your path
+  end
+
+  def after_sign_up_path_for(resource)
+    onboarding_path
   end
 
   def default_url_options
