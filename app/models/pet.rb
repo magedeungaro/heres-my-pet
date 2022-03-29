@@ -16,6 +16,7 @@ class Pet < ApplicationRecord
   private
 
   def build_qr(request_path)
-    Apis::QRCode::GoQR::Interface.generate_qrcode(text: request_path)
+    path_to_qr = "#{Global::Constants::HOST}#{request_path}"
+    Apis::QRCode::GoQR::Interface.generate_qrcode(text: path_to_qr)
   end
 end

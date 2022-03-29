@@ -23,7 +23,10 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @user = current_user
     @pet.user = @user
+    @pet.attach_qr(request.path)
+
     authorize @pet
+
     if @pet.save
       redirect_to pet_path(@pet)
     else
