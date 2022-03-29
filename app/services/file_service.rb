@@ -27,4 +27,15 @@ class FileService
     puts "Sent #{file_name} to Cloudinary"
     obj.send(attachable_type.underscore).attach(blob)
   end
+
+  def self.purge_attachment(obj:, attachable_type:)
+    unless obj.respond_to? attachable_type.underscore
+      message = 'Attachable type not found on model provided.'
+      Sentry.capture_exception(NoMethodError.new(message))
+
+      return message
+    end
+
+    obj.send(attachable_type.underscore).purge_later
+  end
 end
