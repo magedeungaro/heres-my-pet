@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def onboarding
+    redirect_to pets_path if current_user.onboarded
   end
 
   def ui_kitt
