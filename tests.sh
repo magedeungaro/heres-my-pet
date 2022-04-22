@@ -3,8 +3,8 @@
 if test -z "$1"
   then
     shopt -s dotglob
-    find spec/* -prune -type d | while IFS= read -r d; do
-        echo "running tests for $d"
+    find spec/ -prune -type d | while IFS= read -r d; do
+        echo "running test $d"
         bundle exec rspec $d
     done
   else
