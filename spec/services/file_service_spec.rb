@@ -15,9 +15,5 @@ RSpec.describe "FileService", type: :helper do
 
     assert_path_exists(file)
   end
-
-  it "should not raise an error if some argument is not given" do
-    expect { FileService.create_tmp_file }.not_to raise_error
-  end
  end
 end
