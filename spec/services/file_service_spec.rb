@@ -8,6 +8,8 @@ RSpec.describe "FileService", type: :helper do
     file_path = 'tmp/test.txt'
 
     assert_path_exists(file_path)
+
+    File.delete(file_path)
   end
 
   it "creates a png file if no extension is given" do
@@ -15,16 +17,19 @@ RSpec.describe "FileService", type: :helper do
     file_path = 'tmp/image_testing.png'
 
     assert_path_exists(file_path)
-  end
- end
 
- context ".create_blob" do
+  end
+end
+
+context ".create_blob" do
   it "should return an ActiveStorage::Blob object" do
-    blob = FileService.create_blob(file_path: 'tmp/image_testing.png', file_name: 'image testing')
+    file_path = 'tmp/image_testing.png'
+    blob = FileService.create_blob(file_path: file_path, file_name: 'image testing')
 
     expect(blob.class).to eq(ActiveStorage::Blob)
 
     blob.purge
+    File.delete(file_path)
   end
  end
 
