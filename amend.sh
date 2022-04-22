@@ -8,7 +8,7 @@ gray=`tput setaf 7`
 start_time=$(date +%s.%3N)
 git add $1 .
 
-git commit --amend
+git commit -amend
 
 branch=$(git rev-parse --abbrev-ref HEAD)
 
