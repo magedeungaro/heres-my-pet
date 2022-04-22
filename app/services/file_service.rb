@@ -3,9 +3,9 @@ class FileService
     IO.binwrite("tmp/#{ name }.#{ file_extension }", file.to_s)
   end
 
-  def self.create_blob(file:, file_name:, file_extension: 'png')
+  def self.create_blob(file_path:, file_name:, file_extension: 'png')
     ActiveStorage::Blob.create_after_upload!(
-      io: File.open(file),
+      io: File.open(file_path),
       filename: file_name,
       content_type: file_extension,
     )
