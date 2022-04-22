@@ -6,9 +6,15 @@ RSpec.describe "FileService", type: :helper do
     FileService.create_tmp_file(name: 'test', file: 'some content', file_extension: 'txt')
     file = 'tmp/test.txt'
 
-    expect(File.exist?(file)).to eq(true)
+    assert_path_exists(file)
   end
+
+  it "creates a png file if no extension is given" do
+    FileService.create_tmp_file(name: 'image', file: 'some content')
+    file = 'tmp/image.png'
+
+    assert_path_exists(file)
+  end
+
  end
-
-
 end
