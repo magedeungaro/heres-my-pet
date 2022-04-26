@@ -24,9 +24,17 @@ RSpec.describe "FileService", type: :helper do
   end
 
   context ".attach_file" do
+    let(:user_attributes) { FactoryBot.attributes_for(:user) }
+    let(:pet_attributes) { FactoryBot.attributes_for(:pet) }
+
     it "should attach the file for a given model on a given attachable" do
-      puts "TODO"
-      fail
+      user = User.create! user_attributes
+      pet = Pet.new pet_attributes
+      pet.user = user
+      pet.save!
+
+      FileService.attach_file(file_content: 'test', file_name: pet.id, obj: pet, attachable_type: 'qr_code')
+      expect(pet.qr_code.attached?).to be(true)
     end
 
     it "It should not raise an error if the attachable given is not found in the model" do
