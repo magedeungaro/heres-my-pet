@@ -14,16 +14,16 @@ The font *Titan One* was choosen to represent robustness and a friendly brand.
 
 <h3>Icons</h3>
 
-<div align="center">
-<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/public/icons/ms-icon-310x310.png?raw=true" alt="Heres my pet icon medalion">
+<div align="left">
+<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/public/icons/ms-icon-310x310.png?raw=true" alt="Heres my pet icon medalion"  width="150px">
 </div>
 
 <h3>Logos</h3>
 
-<div align="center">
-<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/app/assets/images/heresmypet_logo_inverted.png?raw=true" alt="Heres my pet - logo for dark backgrounds">
+<div align="left">
+<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/app/assets/images/heresmypet_logo_inverted.png?raw=true" alt="Heres my pet - logo for dark backgrounds" width="150px">
 
-<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/app/assets/images/heresmypet_logo.png?raw=true" alt="Heres my pet - logo for light backgrounds">
+<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/app/assets/images/heresmypet_logo.png?raw=true" alt="Heres my pet - logo for light backgrounds" width="150px">
 </div>
 
 <h2>Prototype</h2>
