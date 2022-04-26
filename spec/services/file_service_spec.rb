@@ -45,8 +45,7 @@ RSpec.describe "FileService", type: :helper do
     end
 
     it "It should not raise an error if the attachable given is not found in the model" do
-      puts "TODO"
-      fail
+      expect { FileService.purge_attachment(obj:pet, attachable_type:'something') }.not_to raise_error
     end
   end
 
