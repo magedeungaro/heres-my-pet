@@ -6,7 +6,7 @@ blue=`tput setaf 4`
 gray=`tput setaf 7`
 
 start_time=$(date +%s.%3N)
-git add .
+git add $1 .
 
 echo "${blue}enter commit message${reset}"
 read message

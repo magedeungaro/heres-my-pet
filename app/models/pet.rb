@@ -17,13 +17,13 @@ class Pet < ApplicationRecord
 
   def attach_qr(request_path)
     file = build_qr(request_path)
-    FileService.attach_file(file: file, file_name: self.id, obj: self, attachable_type: 'qr_code')
+    FileService.attach_file(file_content: file, file_name: self.id, obj: self, attachable_type: 'qr_code')
   end
 
   private
 
   def build_qr(request_path)
-    path_to_qr = "#{Global::Constants::HOST}#{request_path}?qrcode=true"
+    path_to_qr = "#{ Global::Constants::HOST }#{ request_path }?qrcode=true"
     Apis::QRCode::GoQR::Interface.generate_qrcode(text: path_to_qr)
   end
 
