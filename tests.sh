@@ -2,11 +2,7 @@
 
 if test -z "$1"
   then
-    shopt -s dotglob
-    find spec/ -prune -type d | while IFS= read -r d; do
-        echo "running test $d"
-        bundle exec rspec $d
-    done
+    bundle exec rspec
   else
     echo "running tests for $1"
     bundle exec rspec spec/$1
