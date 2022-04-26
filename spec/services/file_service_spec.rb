@@ -32,7 +32,7 @@ RSpec.describe "FileService", type: :helper do
     end
 
     it "It should not raise an error if the attachable given is not found in the model" do
-      expect { FileService.attach_file(file_content: 'test', file_name: pet.id, obj: pet, attachable_type: 'qr_code') }.not_to raise_error
+      expect { FileService.attach_file(file_content: 'test', file_name: pet.id, obj: pet, attachable_type: 'something') }.not_to raise_error
     end
   end
 
