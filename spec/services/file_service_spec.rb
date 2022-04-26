@@ -39,8 +39,9 @@ RSpec.describe "FileService", type: :helper do
 
   context ".purge_attachment" do
     it "should purge the file for a given model on a given attachable" do
-      puts "TODO"
-      fail
+      FileService.purge_attachment(obj:pet, attachable_type:'qr_code')
+
+      expect(pet.qr_code.attached?).to be(false)
     end
 
     it "It should not raise an error if the attachable given is not found in the model" do
