@@ -1,24 +1,27 @@
-# README
+<h1>Here's my pet</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2>Pitch<h2>
+*Here's my pet* was first presented as an idea pitched for Le Wagon web fullstack development bootcamp final project.
 
-Things you may want to cover:
+The idea was to offer an affordable identification service for pets. [You can check the pitch deck here](https://drive.google.com/file/d/1Q3p6T9w5yWYRJVF2zQZ9bIqXxho6PKsf/view?usp=sharing).
 
-* Ruby version
+<h2>Logo Design and Name<h2>
+The idea behind the logo design is to evoke action (orange color) and security (blue color), meaning Here's my pet will help the tutor find their pet, but they also need to act.
 
-* System dependencies
+The font *Titan One* was choosen to represent robustness and a friendly brand.
 
-* Configuration
+<h3>Icons</h3>
+<div align="center">
+<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/public/icons/ms-icon-310x310.png?raw=true" alt="Heres my pet icon medalion">
+</div>
 
-* Database creation
+<h3>Logos</h3>
+<div align="center">
+<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/app/assets/images/heresmypet_logo_inverted.png?raw=true" alt="Heres my pet - logo for dark backgrounds">
 
-* Database initialization
+<div align="center">
+<img src="https://github.com/magedeungaro/heres-my-pet/blob/master/app/assets/images/heresmypet_logo.png?raw=true" alt="Heres my pet - logo for light backgrounds">
+</div>
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h2>Prototype<h2>
+For the first stage, we designed a high-fidelity prototype to test the most important user stories. For that, we
