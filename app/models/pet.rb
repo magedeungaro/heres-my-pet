@@ -17,7 +17,7 @@ class Pet < ApplicationRecord
 
   def attach_qr(request_path)
     file = build_qr(request_path)
-    FileService.attach_file(file: file, file_name: self.id, obj: self, attachable_type: 'qr_code')
+    FileService.attach_file(file_content: file, file_name: self.id, obj: self, attachable_type: 'qr_code')
   end
 
   private
