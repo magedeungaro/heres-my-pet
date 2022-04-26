@@ -4,20 +4,10 @@ RSpec.describe "FileService", type: :helper do
 
   context ".create_tmp_file" do
     it "creates a file successfully" do
-      FileService.create_tmp_file(file_name: 'test', file_content: 'some content', file_extension: 'txt')
-      file_path = 'tmp/test.txt'
-
-      assert_path_exists(file_path)
-
-      File.delete(file_path)
-    end
-
-    it "creates a png file if no extension is given" do
-      FileService.create_tmp_file(file_name: 'image_testing', file_content: 'some content')
+      FileService.create_tmp_file(file_name: 'image_testing', file_content: 'some content', file_extension: 'png')
       file_path = 'tmp/image_testing.png'
 
       assert_path_exists(file_path)
-
     end
   end
 
