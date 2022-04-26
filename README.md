@@ -28,4 +28,6 @@ The font *Titan One* was choosen to represent robustness and a friendly brand.
 
 <h2>Prototype</h2>
 
-For the first stage, we designed a high-fidelity prototype to test the most important user stories. For that, we
+For the first stage, we designed a high-fidelity prototype to test the most important user stories. For that, we kept in mind [Nielsen's Usabilty Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/).
+
+You can [check the prototype here](https://www.figma.com/proto/zlrvtJiXEMw7PyPJtKu7wl/HMP?node-id=74%3A242&scaling=scale-down&page-id=8%3A2&starting-point-node-id=74%3A242).
