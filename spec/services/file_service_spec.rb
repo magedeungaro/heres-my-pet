@@ -23,8 +23,9 @@ RSpec.describe "FileService", type: :helper do
     end
   end
 
+  let!(:pet) { FactoryBot.create(:pet) }
+
   context ".attach_file" do
-    let!(:pet) { FactoryBot.create(:pet) }
 
     it "should attach the file for a given model on a given attachable" do
       FileService.attach_file(file_content: 'test', file_name: pet.id, obj: pet, attachable_type: 'qr_code')
