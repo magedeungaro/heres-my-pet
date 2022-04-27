@@ -40,29 +40,40 @@ You can check the live app at [https://www.heresmy.pet](https://www.heresmy.pet)
 
 <h3>Back-end and Databases</h3>
 
-Ruby/Rails
-ActiveMailer
-PostgreSQL (UUID, polymorphism)
-Redis (Websocket)
-Cloudinary
+<ul>
+  <li>Ruby/Rails</li>
+  <li>ActiveMailer</li>
+  <li>PostgreSQL (UUID, polymorphism)</li>
+  <li>Redis (Websocket)</li>
+  <li>Cloudinary</li>
+</ul>
+
 
 <h3>Front-end</h3>
 
-Javascript
-Stimulus
-Bootstrap
-SASS
-Service Worker
-PWA
+<ul>
+  <li>Javascript</li>
+  <li>Stimulus</li>
+  <li>Bootstrap</li>
+  <li>SASS</li>
+  <li>Service Worker</li>
+  <li>PWA</li>
+</ul>
+
 
 <h3>Infrastructure and Monitoring</h3>
 
-Sentry
-Heroku
+<ul>
+  <li>Sentry</li>
+  <li>Heroku</li>
+</ul>
+
 
 <h3>Testing</h3>
 
-RSpec
+<ul>
+  <li>RSpec</li>
+</ul>
 
 <h2>APIs used</h2>
 
