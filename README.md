@@ -66,6 +66,6 @@ You can check the live app at [https://www.heresmy.pet](https://www.heresmy.pet)
 
   ![https://www.heresmy.pet](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWGIK2QNq8jPwZ3otkyusLrg3fnJS35_zMDIAx7XXKiBet-Ww2EPYVqzjoMG1osvtEiG_3v7i_K6942GcNp4SpPt7o7GUKCXPdHYnYHTI_Z9wvmMltmJrnYRAQs2yEHK0lBvz7lNzIr7bgoDK4o0KGbEBkejy8DeR2F28-ZfR3-CltDf53qEHBn8HfkA/s640/hmp%20third%20gif.gif)
 
-  ![https://www.heresmy.pet](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTo4-NJYkj612a4B9dtUwvHxWi0SuJdsSdfYXl6DQv6TsgQacsB_jtVDcYRZ9awMUn3lue2mQ6UOHF9KbKdlBJJLY6YvXpMwI0WXwS9spUuhJuRjen2mF5lirVto17pP4MJvLr05HwAQC3z_PBiKYmut56K93sDRzTsJARS0iROBqBIySTsYRZNmopSQ/s1600/hmp%20email.jpeg)
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTo4-NJYkj612a4B9dtUwvHxWi0SuJdsSdfYXl6DQv6TsgQacsB_jtVDcYRZ9awMUn3lue2mQ6UOHF9KbKdlBJJLY6YvXpMwI0WXwS9spUuhJuRjen2mF5lirVto17pP4MJvLr05HwAQC3z_PBiKYmut56K93sDRzTsJARS0iROBqBIySTsYRZNmopSQ/s1600/hmp%20email.jpeg" alt="Heres my pet - logo for dark backgrounds" style="width:50%">
 
 </div>
