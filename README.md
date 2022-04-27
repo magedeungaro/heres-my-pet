@@ -6,7 +6,7 @@
 
 The idea was to offer an affordable identification service for pets. [You can check the pitch deck here](https://drive.google.com/file/d/1Q3p6T9w5yWYRJVF2zQZ9bIqXxho6PKsf/view?usp=sharing).
 
-<h2>Logo Design and Name</h2>
+<h2>Logo Design</h2>
 
 The idea behind the logo design is to evoke action (orange color) and security (blue color).
 
