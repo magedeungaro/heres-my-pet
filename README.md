@@ -44,7 +44,7 @@ You can check the live app at [https://www.heresmy.pet](https://www.heresmy.pet)
   <li>Ruby/Rails</li>
   <li>ActiveMailer</li>
   <li>PostgreSQL (UUID, polymorphism)</li>
-  <li>Redis (Websocket)</li>
+  <li>Sidekiq/Redis (Websocket)</li>
   <li>Cloudinary</li>
 </ul>
 
