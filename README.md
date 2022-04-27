@@ -31,3 +31,24 @@ The font *Titan One* was choosen to represent robustness and a friendly brand.
 For the first stage, we designed a high-fidelity prototype to test the most important user stories. For that, we kept in mind [Nielsen's Usabilty Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/).
 
 You can [check the prototype here](https://www.figma.com/proto/zlrvtJiXEMw7PyPJtKu7wl/HMP?node-id=74%3A242&scaling=scale-down&page-id=8%3A2&starting-point-node-id=74%3A242).
+
+<h2>Live App</h2>
+
+You can check the live app at [https://www.heresmy.pet](https://www.heresmy.pet). You can also download it as a PWA.
+
+<h3>User flows</h3>
+
+1) Pet owner registers their pet. The platform offers a QR code to be used for their pet profile.
+
+![https://www.heresmy.pet](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgd9IhcY4Ta_eWwhwTEkeVosWx3x-4tCOrmZPAnnGSEaBNDUFhTB5gtuFlw9uMJcsOSbMLKllh7InyaYFBj8WTlINl6i7TPPgOmDHJP60zYt1WUHdDp3UwiVJy32L_LRLldtVNTt9dPpHK4AALmr3QV5l879yvtDEDBv3cqT71pA21TRMtXxDPzDBaLvQ/s640/hmp%20first%20gif.gif)
+
+2) With that QR code on their pet's collar, if the pet is found lost, somebody can scan the code and send a message and location.
+
+![https://www.heresmy.pet](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhumOfNLqnVE4zmjr8fcgaZ_HpBKBDqoDvyHITCUF5SY-EBOno1X6VSqNkbzRLvpYft6GqmredBgVZzNsUf1tYG7KTPPt2MZrh0QhI-A1XekO4_04JAKYYU0On6m5Q6c1pMTvKkz-TqTosvA0pe_9LeQf_7dt-XuuCJqD6J0uSXrSYv3TXShhIgaxRedw/s640/hmp%20second%20gif.gif)
+
+3) As the message is sent, the owner immediately receives a notification in the app. An email is also sent.
+
+
+![https://www.heresmy.pet](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWGIK2QNq8jPwZ3otkyusLrg3fnJS35_zMDIAx7XXKiBet-Ww2EPYVqzjoMG1osvtEiG_3v7i_K6942GcNp4SpPt7o7GUKCXPdHYnYHTI_Z9wvmMltmJrnYRAQs2yEHK0lBvz7lNzIr7bgoDK4o0KGbEBkejy8DeR2F28-ZfR3-CltDf53qEHBn8HfkA/s640/hmp%20third%20gif.gif)
+
+![https://www.heresmy.pet](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTo4-NJYkj612a4B9dtUwvHxWi0SuJdsSdfYXl6DQv6TsgQacsB_jtVDcYRZ9awMUn3lue2mQ6UOHF9KbKdlBJJLY6YvXpMwI0WXwS9spUuhJuRjen2mF5lirVto17pP4MJvLr05HwAQC3z_PBiKYmut56K93sDRzTsJARS0iROBqBIySTsYRZNmopSQ/s1600/hmp%20email.jpeg)
