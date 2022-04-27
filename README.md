@@ -8,7 +8,7 @@ The idea was to offer an affordable identification service for pets. [You can ch
 
 <h2>Logo Design and Name</h2>
 
-The idea behind the logo design is to evoke action (orange color) and security (blue color), meaning Here's my pet will help the tutor find their pet, but they also need to act.
+The idea behind the logo design is to evoke action (orange color) and security (blue color).
 
 The font *Titan One* was choosen to represent robustness and a friendly brand.
 
