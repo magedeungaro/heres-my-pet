@@ -36,7 +36,42 @@ You can [check the prototype here](https://www.figma.com/proto/zlrvtJiXEMw7PyPJt
 
 You can check the live app at [https://www.heresmy.pet](https://www.heresmy.pet). You can also download it as a PWA.
 
-<h3>User flows</h3>
+<h2>Tecnologies used</h2>
+
+<h3>Back-end and Databases</h3>
+
+Ruby/Rails
+ActiveMailer
+PostgreSQL (UUID, polymorphism)
+Redis (Websocket)
+Cloudinary
+
+<h3>Front-end</h3>
+
+Javascript
+Stimulus
+Bootstrap
+SASS
+Service Worker
+PWA
+
+<h3>Infrastructure and Monitoring</h3>
+
+Sentry
+Heroku
+
+<h3>Testing</h3>
+
+RSpec
+
+<h2>APIs used</h2>
+
+[Push Notification API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
+[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+[Mapbox API](https://www.mapbox.com/)
+[GoQR API](https://goqr.me/api/)
+
+<h2>User flows</h2>
 
 1) Pet owner registers their pet. The platform offers a QR code to be used for their pet profile.
 
