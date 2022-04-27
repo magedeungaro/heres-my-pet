@@ -78,10 +78,14 @@ You can check the live app at [https://www.heresmy.pet](https://www.heresmy.pet)
 <h2>APIs used</h2>
 
 <ul>
-  <li>[Push Notification API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)</li>
-  <li>[Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)</li>
-  <li>[Mapbox API](https://www.mapbox.com/)</li>
-  <li>[GoQR API](https://goqr.me/api/)</li>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">Push Notification API </a>
+  <li>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API">Geolocation API </a>
+  <li>
+    <a href="https://www.mapbox.com/">Mapbox API </a>
+  <li>
+    <a href="https://goqr.me/api/">GoQR API </a>
 </ul>
 
 <h2>User flows</h2>
